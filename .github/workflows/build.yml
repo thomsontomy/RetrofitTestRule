@@ -42,5 +42,9 @@ jobs:
 
       - name: Publish gradle
         uses: gradle/gradle-build-action@v2.1.4
+        env:
+          ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.GPG_PRIVATE_KEY }}
+          ORG_GRADLE_PROJECT_signingInMemoryKeyId: ${{ secrets.SIGNING_KEY_ID }}
+          ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.SIGNING_KEY_PASSWORD }}
         with:
           arguments: publishMavenPublicationToMavenLocal
