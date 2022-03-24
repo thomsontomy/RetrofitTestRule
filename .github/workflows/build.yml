@@ -17,12 +17,30 @@ jobs:
         uses: actions/checkout@v3
         
       - name: Setup Java JDK
-        uses: actions/setup-java@v3.0.0  
+        uses: actions/setup-java@v3.0.0
         with:
           distribution: 'zulu'
           java-version: 11
-      
+
       - name: Assemble Gradle
         uses: gradle/gradle-build-action@v2.1.4
         with:
           arguments: build
+
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Java JDK
+        uses: actions/setup-java@v3.0.0
+        with:
+          distribution: 'zulu'
+          java-version: 11
+
+      - name: Publish gradle
+        uses: gradle/gradle-build-action@v2.1.4
+        with:
+          arguments: publishMavenPublicationToMavenLocal
