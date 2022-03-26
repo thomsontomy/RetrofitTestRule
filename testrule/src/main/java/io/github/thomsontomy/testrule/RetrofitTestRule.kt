@@ -15,6 +15,16 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 /**
  * JUnit test rule for testing Retrofit services
+ *
+ * @author Thomson Thomas
+ *
+ * @constructor Creates an instance of [RetrofitTestRule]
+ *
+ * @param T Retrofit service interface
+ * @property clazz Class instance of the retrofit service interface
+ * @property logLevel [LogLevel] from the rule
+ * @property converterFactories List of retrofit converter factories. Default value is [GsonConverterFactory]
+ * @property callAdapterFactories List of retrofit call adapter factories
  */
 class RetrofitTestRule<T>(
     private val clazz: Class<T>,
@@ -29,6 +39,11 @@ class RetrofitTestRule<T>(
 
     private val mockWebServer = MockWebServer()
 
+    /**
+     * Returns the service instance which was passed in while creating [RetrofitTestRule].
+     * To be used inside the unit test to test the service.
+     * @return T instance of the retrofit service
+     */
     fun getService(): T {
         val url = mockWebServer.url("")
         val retrofitBuilder = Retrofit.Builder()
@@ -130,6 +145,41 @@ class RetrofitTestRule<T>(
     }
 }
 
+/**
+ * Level of log output from the rule
+ */
 enum class LogLevel {
-    NONE, BASIC, HEADERS, BODY
+    /**
+     * No logs
+     */
+    NONE,
+
+    /**
+     * Basic logs. Logs request line
+     * Eg:
+     * ```
+     * --> GET /users/my_user/repos HTTP/1.1
+     * <-- END HTTP
+     * ```
+     */
+    BASIC,
+
+    /**
+     * Logs including headers
+     * Eg:
+     * ```
+     * --> GET /users/my_user/repos HTTP/1.1
+     * Host: localhost:52428
+     * Connection: Keep-Alive
+     * Accept-Encoding: gzip
+     * User-Agent: okhttp/4.9.3
+     * <-- END HTTP
+     * ```
+     */
+    HEADERS,
+
+    /**
+     * Logs including body
+     */
+    BODY
 }

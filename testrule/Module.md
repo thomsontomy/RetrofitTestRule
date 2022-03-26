@@ -1,12 +1,6 @@
-# RetrofitTestRule
+# Module Retrofit Test Rule
 
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/thomsontomy/RetrofitTestRule/blob/main/LICENSE)
-
-## JUnit test rule for testing retrofit services
-
-Generally we don't unit test retrofit interfaces. But if you would like to have an integration test
-for the retrofit interfaces, then this test rule can be handy. This rule can be used as an
-integration test to make sure the retrofit service configuration is correct
+### JUnit test rule for testing retrofit services
 
 ### Example
 
@@ -49,9 +43,3 @@ class GitHubServiceTest {
 ```groovy
 testImplementation("io.github.thomsontomy:testrule:0.2.0")
 ```
-
-### Under the hood
-
-This rule makes use of
-OkHttp's [MockWebServer](https://github.com/square/okhttp/tree/master/mockwebserver) and creates a
-mock server for the retrofit service to use.

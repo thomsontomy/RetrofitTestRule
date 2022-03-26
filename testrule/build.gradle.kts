@@ -2,6 +2,7 @@ plugins {
     id("java-library")
     id("org.jetbrains.kotlin.jvm")
     id("com.vanniktech.maven.publish")
+    id("org.jetbrains.dokka")
 }
 
 java {
@@ -18,4 +19,13 @@ dependencies {
 
 mavenPublish {
     sonatypeHost = com.vanniktech.maven.publish.SonatypeHost.S01
+}
+
+tasks.withType<org.jetbrains.dokka.gradle.DokkaTask>().configureEach {
+    dokkaSourceSets {
+        named("main") {
+            moduleName.set("Retrofit Test Rule")
+            includes.from("Module.md")
+        }
+    }
 }
