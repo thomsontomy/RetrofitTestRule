@@ -29,3 +29,7 @@ tasks.withType<org.jetbrains.dokka.gradle.DokkaTask>().configureEach {
         }
     }
 }
+
+tasks.dokkaJekyll.configure {
+    outputDirectory.set(File(rootProject.rootDir, "docs"))
+}

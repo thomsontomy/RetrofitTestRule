@@ -1,0 +1,30 @@
+$dokka.format:jekyll-v1
+$dokka.linkExtension:html
+$dokka.location:io.github.thomsontomy.testrule////PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/index.html
+$dokka.location:io.github.thomsontomy.testrule/LogLevel.BASIC///PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-log-level/-b-a-s-i-c/index.html
+$dokka.location:io.github.thomsontomy.testrule/LogLevel.BODY///PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-log-level/-b-o-d-y/index.html
+$dokka.location:io.github.thomsontomy.testrule/LogLevel.HEADERS///PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-log-level/-h-e-a-d-e-r-s/index.html
+$dokka.location:io.github.thomsontomy.testrule/LogLevel.NONE///PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-log-level/-n-o-n-e/index.html
+$dokka.location:io.github.thomsontomy.testrule/LogLevel///PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-log-level/index.html
+$dokka.location:io.github.thomsontomy.testrule/RequestValidations///PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-request-validations/index.html
+$dokka.location:io.github.thomsontomy.testrule/RequestValidations/RequestValidations/#kotlin.String#kotlin.String#kotlin.Array[retrofit2.http.Header]#kotlin.String#kotlin.String/PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-request-validations/-request-validations.html
+$dokka.location:io.github.thomsontomy.testrule/RequestValidations/bodyFile/#/PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-request-validations/body-file.html
+$dokka.location:io.github.thomsontomy.testrule/RequestValidations/bodyText/#/PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-request-validations/body-text.html
+$dokka.location:io.github.thomsontomy.testrule/RequestValidations/headers/#/PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-request-validations/headers.html
+$dokka.location:io.github.thomsontomy.testrule/RequestValidations/method/#/PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-request-validations/method.html
+$dokka.location:io.github.thomsontomy.testrule/RequestValidations/path/#/PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-request-validations/path.html
+$dokka.location:io.github.thomsontomy.testrule/ResponseOptions///PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-response-options/index.html
+$dokka.location:io.github.thomsontomy.testrule/ResponseOptions/ResponseOptions/#kotlin.Int#kotlin.String#kotlin.String/PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-response-options/-response-options.html
+$dokka.location:io.github.thomsontomy.testrule/ResponseOptions/bodyFile/#/PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-response-options/body-file.html
+$dokka.location:io.github.thomsontomy.testrule/ResponseOptions/bodyText/#/PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-response-options/body-text.html
+$dokka.location:io.github.thomsontomy.testrule/ResponseOptions/code/#/PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-response-options/code.html
+$dokka.location:io.github.thomsontomy.testrule/RestRequest///PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-rest-request/index.html
+$dokka.location:io.github.thomsontomy.testrule/RestRequest/RestRequest/#io.github.thomsontomy.testrule.RequestValidations#io.github.thomsontomy.testrule.ResponseOptions/PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-rest-request/-rest-request.html
+$dokka.location:io.github.thomsontomy.testrule/RestRequest/responseOptions/#/PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-rest-request/response-options.html
+$dokka.location:io.github.thomsontomy.testrule/RestRequest/validations/#/PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-rest-request/validations.html
+$dokka.location:io.github.thomsontomy.testrule/RetrofitTestRule///PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-retrofit-test-rule/index.html
+$dokka.location:io.github.thomsontomy.testrule/RetrofitTestRule/RetrofitTestRule/#java.lang.Class[TypeParam(bounds=[kotlin.Any?])]#io.github.thomsontomy.testrule.LogLevel#kotlin.collections.List[retrofit2.Converter.Factory]#kotlin.collections.List[retrofit2.CallAdapter.Factory]/PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-retrofit-test-rule/-retrofit-test-rule.html
+$dokka.location:io.github.thomsontomy.testrule/RetrofitTestRule/apply/#org.junit.runners.model.Statement#org.junit.runner.Description/PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-retrofit-test-rule/apply.html
+$dokka.location:io.github.thomsontomy.testrule/RetrofitTestRule/getService/#/PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-retrofit-test-rule/get-service.html
+io.github.thomsontomy.testrule
+

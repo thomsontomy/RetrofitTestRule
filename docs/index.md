@@ -1,37 +1,59 @@
-## Welcome to GitHub Pages
+---
+title: Retrofit Test Rule
+---
+//[Retrofit Test Rule](index.html)
 
-You can use the [editor on GitHub](https://github.com/thomsontomy/RetrofitTestRule/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+# Retrofit Test Rule
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+[jvm]\
 
-### Markdown
+### JUnit test rule for testing retrofit services
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Configuration
 
-```markdown
-Syntax highlighted code block
+testImplementation("io.github.thomsontomy:testrule:0.2.0")
 
-# Header 1
-## Header 2
-### Header 3
+### Example
 
-- Bulleted
-- List
+Imagine you have an awesome retrofit service class like below
 
-1. Numbered
-2. List
+interface GitHubService {\
+@GET("users/{user}/repos")\
+suspend fun listRepos(@Path("user") user: String): List&lt;GithubRepo&gt;\
+}
 
-**Bold** and _Italic_ and `Code` text
+The integration test would look like this
 
-[Link](url) and ![Image](src)
-```
+class GitHubServiceTest {\
+@get:Rule\
+val retrofitTestRule = RetrofitTestRule(GitHubService::class.java, logLevel = LogLevel.BODY)\
+\
+@Test\
+@RestRequest(\
+validations = RequestValidations(\
+path = "/users/my_user/repos",\
+method = "GET"\
+), // Validations on the request\
+responseOptions = ResponseOptions(bodyText = "[]") // Response configurations\
+)\
+fun testListRepos() = runTest {\
+// Get the service instance\
+val service = retrofitTestRule.getService()\
+\
+// Make the API call\
+service.listRepos("my_user")\
+}\
+}
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+### Under the hood
 
-### Jekyll Themes
+This rule makes use of
+OkHttp's [MockWebServer](https://github.com/square/okhttp/tree/master/mockwebserver) and creates a
+mock server for the retrofit service to use.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/thomsontomy/RetrofitTestRule/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## Packages
 
-### Support or Contact
+| Name |
+|---|
+| [io.github.thomsontomy.testrule](-retrofit -test -rule/io.github.thomsontomy.testrule/index.html) |
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.

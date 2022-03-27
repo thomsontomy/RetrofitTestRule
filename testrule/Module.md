@@ -2,6 +2,12 @@
 
 ### JUnit test rule for testing retrofit services
 
+### Configuration
+
+```groovy
+testImplementation("io.github.thomsontomy:testrule:0.2.0")
+```
+
 ### Example
 
 Imagine you have an awesome retrofit service class like below
@@ -26,7 +32,7 @@ class GitHubServiceTest {
             path = "/users/my_user/repos",
             method = "GET"
         ), // Validations on the request
-        responseOptions = ResponseOptions(responseBody = "[]") // Response configurations
+        responseOptions = ResponseOptions(bodyText = "[]") // Response configurations
     )
     fun testListRepos() = runTest {
         // Get the service instance
@@ -38,8 +44,8 @@ class GitHubServiceTest {
 }
 ```
 
-### Configuration
+### Under the hood
 
-```groovy
-testImplementation("io.github.thomsontomy:testrule:0.2.0")
-```
+This rule makes use of
+OkHttp's [MockWebServer](https://github.com/square/okhttp/tree/master/mockwebserver) and creates a
+mock server for the retrofit service to use.
