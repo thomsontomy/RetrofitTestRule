@@ -1,4 +1,4 @@
-$dokka.format:jekyll-v1
+$dokka.format:html-v1
 $dokka.linkExtension:html
 $dokka.location:io.github.thomsontomy.testrule////PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/index.html
 $dokka.location:io.github.thomsontomy.testrule/LogLevel.BASIC///PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-log-level/-b-a-s-i-c/index.html

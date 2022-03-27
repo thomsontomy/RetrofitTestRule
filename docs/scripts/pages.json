@@ -1,0 +1,252 @@
+[
+  {
+    "name": "BASIC()",
+    "description": "io.github.thomsontomy.testrule.LogLevel.BASIC",
+    "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-log-level/-b-a-s-i-c/index.html",
+    "searchKeys": [
+      "BASIC",
+      "BASIC()",
+      "io.github.thomsontomy.testrule.LogLevel.BASIC"
+    ]
+  },
+  {
+    "name": "BODY()",
+    "description": "io.github.thomsontomy.testrule.LogLevel.BODY",
+    "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-log-level/-b-o-d-y/index.html",
+    "searchKeys": [
+      "BODY",
+      "BODY()",
+      "io.github.thomsontomy.testrule.LogLevel.BODY"
+    ]
+  },
+  {
+    "name": "HEADERS()",
+    "description": "io.github.thomsontomy.testrule.LogLevel.HEADERS",
+    "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-log-level/-h-e-a-d-e-r-s/index.html",
+    "searchKeys": [
+      "HEADERS",
+      "HEADERS()",
+      "io.github.thomsontomy.testrule.LogLevel.HEADERS"
+    ]
+  },
+  {
+    "name": "NONE()",
+    "description": "io.github.thomsontomy.testrule.LogLevel.NONE",
+    "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-log-level/-n-o-n-e/index.html",
+    "searchKeys": [
+      "NONE",
+      "NONE()",
+      "io.github.thomsontomy.testrule.LogLevel.NONE"
+    ]
+  },
+  {
+    "name": "annotation class RequestValidations(path: String, method: String, headers: Array<Header>, bodyText: String, bodyFile: String)",
+    "description": "io.github.thomsontomy.testrule.RequestValidations",
+    "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-request-validations/index.html",
+    "searchKeys": [
+      "RequestValidations",
+      "annotation class RequestValidations(path: String, method: String, headers: Array<Header>, bodyText: String, bodyFile: String)",
+      "io.github.thomsontomy.testrule.RequestValidations"
+    ]
+  },
+  {
+    "name": "annotation class ResponseOptions(code: Int, bodyText: String, bodyFile: String)",
+    "description": "io.github.thomsontomy.testrule.ResponseOptions",
+    "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-response-options/index.html",
+    "searchKeys": [
+      "ResponseOptions",
+      "annotation class ResponseOptions(code: Int, bodyText: String, bodyFile: String)",
+      "io.github.thomsontomy.testrule.ResponseOptions"
+    ]
+  },
+  {
+    "name": "annotation class RestRequest(validations: RequestValidations, responseOptions: ResponseOptions)",
+    "description": "io.github.thomsontomy.testrule.RestRequest",
+    "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-rest-request/index.html",
+    "searchKeys": [
+      "RestRequest",
+      "annotation class RestRequest(validations: RequestValidations, responseOptions: ResponseOptions)",
+      "io.github.thomsontomy.testrule.RestRequest"
+    ]
+  },
+  {
+    "name": "class RetrofitTestRule<T>(clazz: Class<T>, logLevel: LogLevel, converterFactories: List<Converter.Factory>, callAdapterFactories: List<CallAdapter.Factory>) : TestRule",
+    "description": "io.github.thomsontomy.testrule.RetrofitTestRule",
+    "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-retrofit-test-rule/index.html",
+    "searchKeys": [
+      "RetrofitTestRule",
+      "class RetrofitTestRule<T>(clazz: Class<T>, logLevel: LogLevel, converterFactories: List<Converter.Factory>, callAdapterFactories: List<CallAdapter.Factory>) : TestRule",
+      "io.github.thomsontomy.testrule.RetrofitTestRule"
+    ]
+  },
+  {
+    "name": "enum LogLevel : Enum<LogLevel> ",
+    "description": "io.github.thomsontomy.testrule.LogLevel",
+    "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-log-level/index.html",
+    "searchKeys": [
+      "LogLevel",
+      "enum LogLevel : Enum<LogLevel> ",
+      "io.github.thomsontomy.testrule.LogLevel"
+    ]
+  },
+  {
+    "name": "fun <T> RetrofitTestRule(clazz: Class<T>, logLevel: LogLevel = LogLevel.NONE, converterFactories: List<Converter.Factory> = listOf(\n        GsonConverterFactory.create(\n            Gson()\n        )\n    ), callAdapterFactories: List<CallAdapter.Factory> = emptyList())",
+    "description": "io.github.thomsontomy.testrule.RetrofitTestRule.RetrofitTestRule",
+    "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-retrofit-test-rule/-retrofit-test-rule.html",
+    "searchKeys": [
+      "RetrofitTestRule",
+      "fun <T> RetrofitTestRule(clazz: Class<T>, logLevel: LogLevel = LogLevel.NONE, converterFactories: List<Converter.Factory> = listOf(\n        GsonConverterFactory.create(\n            Gson()\n        )\n    ), callAdapterFactories: List<CallAdapter.Factory> = emptyList())",
+      "io.github.thomsontomy.testrule.RetrofitTestRule.RetrofitTestRule"
+    ]
+  },
+  {
+    "name": "fun RequestValidations(path: String = \"\", method: String = \"\", headers: Array<Header> = [], bodyText: String = \"\", bodyFile: String = \"\")",
+    "description": "io.github.thomsontomy.testrule.RequestValidations.RequestValidations",
+    "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-request-validations/-request-validations.html",
+    "searchKeys": [
+      "RequestValidations",
+      "fun RequestValidations(path: String = \"\", method: String = \"\", headers: Array<Header> = [], bodyText: String = \"\", bodyFile: String = \"\")",
+      "io.github.thomsontomy.testrule.RequestValidations.RequestValidations"
+    ]
+  },
+  {
+    "name": "fun ResponseOptions(code: Int = 200, bodyText: String = \"{}\", bodyFile: String = \"\")",
+    "description": "io.github.thomsontomy.testrule.ResponseOptions.ResponseOptions",
+    "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-response-options/-response-options.html",
+    "searchKeys": [
+      "ResponseOptions",
+      "fun ResponseOptions(code: Int = 200, bodyText: String = \"{}\", bodyFile: String = \"\")",
+      "io.github.thomsontomy.testrule.ResponseOptions.ResponseOptions"
+    ]
+  },
+  {
+    "name": "fun RestRequest(validations: RequestValidations = RequestValidations(), responseOptions: ResponseOptions = ResponseOptions())",
+    "description": "io.github.thomsontomy.testrule.RestRequest.RestRequest",
+    "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-rest-request/-rest-request.html",
+    "searchKeys": [
+      "RestRequest",
+      "fun RestRequest(validations: RequestValidations = RequestValidations(), responseOptions: ResponseOptions = ResponseOptions())",
+      "io.github.thomsontomy.testrule.RestRequest.RestRequest"
+    ]
+  },
+  {
+    "name": "fun getService(): T",
+    "description": "io.github.thomsontomy.testrule.RetrofitTestRule.getService",
+    "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-retrofit-test-rule/get-service.html",
+    "searchKeys": [
+      "getService",
+      "fun getService(): T",
+      "io.github.thomsontomy.testrule.RetrofitTestRule.getService"
+    ]
+  },
+  {
+    "name": "open override fun apply(base: Statement, description: Description): Statement",
+    "description": "io.github.thomsontomy.testrule.RetrofitTestRule.apply",
+    "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-retrofit-test-rule/apply.html",
+    "searchKeys": [
+      "apply",
+      "open override fun apply(base: Statement, description: Description): Statement",
+      "io.github.thomsontomy.testrule.RetrofitTestRule.apply"
+    ]
+  },
+  {
+    "name": "val bodyFile: String",
+    "description": "io.github.thomsontomy.testrule.RequestValidations.bodyFile",
+    "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-request-validations/body-file.html",
+    "searchKeys": [
+      "bodyFile",
+      "val bodyFile: String",
+      "io.github.thomsontomy.testrule.RequestValidations.bodyFile"
+    ]
+  },
+  {
+    "name": "val bodyFile: String",
+    "description": "io.github.thomsontomy.testrule.ResponseOptions.bodyFile",
+    "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-response-options/body-file.html",
+    "searchKeys": [
+      "bodyFile",
+      "val bodyFile: String",
+      "io.github.thomsontomy.testrule.ResponseOptions.bodyFile"
+    ]
+  },
+  {
+    "name": "val bodyText: String",
+    "description": "io.github.thomsontomy.testrule.RequestValidations.bodyText",
+    "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-request-validations/body-text.html",
+    "searchKeys": [
+      "bodyText",
+      "val bodyText: String",
+      "io.github.thomsontomy.testrule.RequestValidations.bodyText"
+    ]
+  },
+  {
+    "name": "val bodyText: String",
+    "description": "io.github.thomsontomy.testrule.ResponseOptions.bodyText",
+    "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-response-options/body-text.html",
+    "searchKeys": [
+      "bodyText",
+      "val bodyText: String",
+      "io.github.thomsontomy.testrule.ResponseOptions.bodyText"
+    ]
+  },
+  {
+    "name": "val code: Int = 200",
+    "description": "io.github.thomsontomy.testrule.ResponseOptions.code",
+    "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-response-options/code.html",
+    "searchKeys": [
+      "code",
+      "val code: Int = 200",
+      "io.github.thomsontomy.testrule.ResponseOptions.code"
+    ]
+  },
+  {
+    "name": "val headers: Array<Header>",
+    "description": "io.github.thomsontomy.testrule.RequestValidations.headers",
+    "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-request-validations/headers.html",
+    "searchKeys": [
+      "headers",
+      "val headers: Array<Header>",
+      "io.github.thomsontomy.testrule.RequestValidations.headers"
+    ]
+  },
+  {
+    "name": "val method: String",
+    "description": "io.github.thomsontomy.testrule.RequestValidations.method",
+    "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-request-validations/method.html",
+    "searchKeys": [
+      "method",
+      "val method: String",
+      "io.github.thomsontomy.testrule.RequestValidations.method"
+    ]
+  },
+  {
+    "name": "val path: String",
+    "description": "io.github.thomsontomy.testrule.RequestValidations.path",
+    "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-request-validations/path.html",
+    "searchKeys": [
+      "path",
+      "val path: String",
+      "io.github.thomsontomy.testrule.RequestValidations.path"
+    ]
+  },
+  {
+    "name": "val responseOptions: ResponseOptions",
+    "description": "io.github.thomsontomy.testrule.RestRequest.responseOptions",
+    "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-rest-request/response-options.html",
+    "searchKeys": [
+      "responseOptions",
+      "val responseOptions: ResponseOptions",
+      "io.github.thomsontomy.testrule.RestRequest.responseOptions"
+    ]
+  },
+  {
+    "name": "val validations: RequestValidations",
+    "description": "io.github.thomsontomy.testrule.RestRequest.validations",
+    "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-rest-request/validations.html",
+    "searchKeys": [
+      "validations",
+      "val validations: RequestValidations",
+      "io.github.thomsontomy.testrule.RestRequest.validations"
+    ]
+  }
+]
