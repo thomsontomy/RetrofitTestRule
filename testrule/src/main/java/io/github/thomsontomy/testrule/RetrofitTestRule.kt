@@ -96,10 +96,10 @@ class RetrofitTestRule<T>(
     private fun RestRequest.validateRequest() {
         val request = mockWebServer.takeRequest()
         request.logRequest()
-        if (validations.path.isNotBlank() && request.path != validations.path) {
+        if (validations.path.isNotMagicNull() && request.path != validations.path) {
             fail("Expected request route <${validations.path}> but was <${request.path}>")
         }
-        if (validations.method.isNotBlank() && request.method != validations.method) {
+        if (validations.method.isNotMagicNull() && request.method != validations.method) {
             fail("Expected request method <${validations.method}> but was <${request.method}>")
         }
         if (validations.headers.isNotEmpty()) {
@@ -114,8 +114,8 @@ class RetrofitTestRule<T>(
             }
         }
         val validationBodyText = when {
-            validations.bodyText.isNotBlank() -> validations.bodyText
-            validations.bodyFile.isNotBlank() -> getResourceContents(validations.bodyFile)
+            validations.bodyText.isNotMagicNull() -> validations.bodyText
+            validations.bodyFile.isNotMagicNull() -> getResourceContents(validations.bodyFile)
             else -> ""
         }
         if (validationBodyText.isNotBlank() && request.body.copy()
@@ -139,6 +139,8 @@ class RetrofitTestRule<T>(
             println("<-- END HTTP")
         }
     }
+
+    private fun String.isNotMagicNull(): Boolean = this != MAGIC_NULL
 
     private fun cleanupMockServer() {
         mockWebServer.shutdown()

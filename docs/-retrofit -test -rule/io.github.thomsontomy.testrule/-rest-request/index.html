@@ -9,7 +9,6 @@ const savedDarkMode = storage ? JSON.parse(storage) : false
 if(savedDarkMode === true){
     document.getElementsByTagName("html")[0].classList.add("theme-dark")
 }
-
     </script>
     <script type="text/javascript" src="../../../scripts/sourceset_dependencies.js"
             async="async"></script>
@@ -30,7 +29,7 @@ if(savedDarkMode === true){
 <div class="navigation-wrapper" id="navigation-wrapper">
     <div id="leftToggler"><span class="icon-toggler"></span></div>
     <div class="library-name"><a href="../../../index.html">Retrofit Test Rule</a></div>
-    <div>0.2.0</div>
+    <div>0.3.0</div>
     <div class="pull-right d-flex">
         <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
         <div id="searchBar"></div>
@@ -53,8 +52,21 @@ if(savedDarkMode === true){
                 <div class="platform-hinted " data-platform-hinted="data-platform-hinted">
                     <div class="content sourceset-depenent-content" data-active=""
                          data-togglable=":testrule:dokkaHtml/main">
-                        <div class="symbol monospace"><span
-                                class="token keyword">annotation class </span><a href="index.html">RestRequest</a><span
+                        <div class="symbol monospace">
+                            <div class="block">
+                                <div class="block"><span class="token annotation">@</span><a
+                                        href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-target/index.html"><span
+                                        class="token annotation">Target</span></a><span
+                                        class="token punctuation">(</span><span>allowedTargets<span
+                                        class="token operator"> = </span><span
+                                        class="token punctuation">[</span><span><a
+                                        href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.annotation/-annotation-target/-f-u-n-c-t-i-o-n/index.html">AnnotationTarget.FUNCTION</a></span><wbr></wbr><span
+                                        class="token punctuation">]</span></span>
+                                    <wbr></wbr>
+                                    <span class="token punctuation">)</span></div>
+                            </div>
+                            <span class="token keyword">annotation class </span><a
+                                href="index.html">RestRequest</a><span
                                 class="token punctuation">(</span>validations<span
                                 class="token operator">: </span><a
                                 href="../-request-validations/index.html">RequestValidations</a><span

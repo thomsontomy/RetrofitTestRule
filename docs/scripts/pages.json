@@ -100,12 +100,12 @@
     ]
   },
   {
-    "name": "fun RequestValidations(path: String = \"\", method: String = \"\", headers: Array<Header> = [], bodyText: String = \"\", bodyFile: String = \"\")",
+    "name": "fun RequestValidations(path: String = MAGIC_NULL, method: String = MAGIC_NULL, headers: Array<Header> = [], bodyText: String = MAGIC_NULL, bodyFile: String = MAGIC_NULL)",
     "description": "io.github.thomsontomy.testrule.RequestValidations.RequestValidations",
     "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-request-validations/-request-validations.html",
     "searchKeys": [
       "RequestValidations",
-      "fun RequestValidations(path: String = \"\", method: String = \"\", headers: Array<Header> = [], bodyText: String = \"\", bodyFile: String = \"\")",
+      "fun RequestValidations(path: String = MAGIC_NULL, method: String = MAGIC_NULL, headers: Array<Header> = [], bodyText: String = MAGIC_NULL, bodyFile: String = MAGIC_NULL)",
       "io.github.thomsontomy.testrule.RequestValidations.RequestValidations"
     ]
   },

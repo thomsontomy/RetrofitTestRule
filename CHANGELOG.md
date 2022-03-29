@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+Version 0.3.0 *(2022-03-30)*
+----------------------------
+
+* Update annotation targets
+* Fix the issue with validation default values
+
 Version 0.2.0 *(2022-03-27)*
 ----------------------------
 
