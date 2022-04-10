@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/thomsontomy/RetrofitTestRule/blob/main/LICENSE)
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/thomsontomy/RetrofitTestRule/CI/main)
-![Maven Central](https://img.shields.io/maven-central/v/io.github.thomsontomy/testrule)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.thomsontomy/testrule)](https://search.maven.org/artifact/io.github.thomsontomy/testrule)
 
 ## JUnit test rule for testing retrofit services
 
