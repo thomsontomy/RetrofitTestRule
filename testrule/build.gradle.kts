@@ -17,8 +17,9 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 }
 
-mavenPublish {
-    sonatypeHost = com.vanniktech.maven.publish.SonatypeHost.S01
+mavenPublishing {
+    publishToMavenCentral(com.vanniktech.maven.publish.SonatypeHost.S01)
+    signAllPublications()
 }
 
 tasks.withType<org.jetbrains.dokka.gradle.DokkaTask>().configureEach {
