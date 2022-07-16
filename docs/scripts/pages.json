@@ -1,81 +1,81 @@
 [
   {
-    "name": "BASIC()",
+    "name": "BASIC",
     "description": "io.github.thomsontomy.testrule.LogLevel.BASIC",
     "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-log-level/-b-a-s-i-c/index.html",
     "searchKeys": [
       "BASIC",
-      "BASIC()",
+      "BASIC",
       "io.github.thomsontomy.testrule.LogLevel.BASIC"
     ]
   },
   {
-    "name": "BODY()",
+    "name": "BODY",
     "description": "io.github.thomsontomy.testrule.LogLevel.BODY",
     "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-log-level/-b-o-d-y/index.html",
     "searchKeys": [
       "BODY",
-      "BODY()",
+      "BODY",
       "io.github.thomsontomy.testrule.LogLevel.BODY"
     ]
   },
   {
-    "name": "HEADERS()",
+    "name": "HEADERS",
     "description": "io.github.thomsontomy.testrule.LogLevel.HEADERS",
     "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-log-level/-h-e-a-d-e-r-s/index.html",
     "searchKeys": [
       "HEADERS",
-      "HEADERS()",
+      "HEADERS",
       "io.github.thomsontomy.testrule.LogLevel.HEADERS"
     ]
   },
   {
-    "name": "NONE()",
+    "name": "NONE",
     "description": "io.github.thomsontomy.testrule.LogLevel.NONE",
     "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-log-level/-n-o-n-e/index.html",
     "searchKeys": [
       "NONE",
-      "NONE()",
+      "NONE",
       "io.github.thomsontomy.testrule.LogLevel.NONE"
     ]
   },
   {
-    "name": "annotation class RequestValidations(path: String, method: String, headers: Array<Header>, bodyText: String, bodyFile: String)",
+    "name": "annotation class RequestValidations(val path: String = MAGIC_NULL, val method: String = MAGIC_NULL, val headers: Array<Header> = [], val bodyText: String = MAGIC_NULL, val bodyFile: String = MAGIC_NULL)",
     "description": "io.github.thomsontomy.testrule.RequestValidations",
     "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-request-validations/index.html",
     "searchKeys": [
       "RequestValidations",
-      "annotation class RequestValidations(path: String, method: String, headers: Array<Header>, bodyText: String, bodyFile: String)",
+      "annotation class RequestValidations(val path: String = MAGIC_NULL, val method: String = MAGIC_NULL, val headers: Array<Header> = [], val bodyText: String = MAGIC_NULL, val bodyFile: String = MAGIC_NULL)",
       "io.github.thomsontomy.testrule.RequestValidations"
     ]
   },
   {
-    "name": "annotation class ResponseOptions(code: Int, bodyText: String, bodyFile: String)",
+    "name": "annotation class ResponseOptions(val code: Int = 200, val bodyText: String = \"{}\", val bodyFile: String = \"\")",
     "description": "io.github.thomsontomy.testrule.ResponseOptions",
     "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-response-options/index.html",
     "searchKeys": [
       "ResponseOptions",
-      "annotation class ResponseOptions(code: Int, bodyText: String, bodyFile: String)",
+      "annotation class ResponseOptions(val code: Int = 200, val bodyText: String = \"{}\", val bodyFile: String = \"\")",
       "io.github.thomsontomy.testrule.ResponseOptions"
     ]
   },
   {
-    "name": "annotation class RestRequest(validations: RequestValidations, responseOptions: ResponseOptions)",
+    "name": "annotation class RestRequest(val validations: RequestValidations = RequestValidations(), val responseOptions: ResponseOptions = ResponseOptions())",
     "description": "io.github.thomsontomy.testrule.RestRequest",
     "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-rest-request/index.html",
     "searchKeys": [
       "RestRequest",
-      "annotation class RestRequest(validations: RequestValidations, responseOptions: ResponseOptions)",
+      "annotation class RestRequest(val validations: RequestValidations = RequestValidations(), val responseOptions: ResponseOptions = ResponseOptions())",
       "io.github.thomsontomy.testrule.RestRequest"
     ]
   },
   {
-    "name": "class RetrofitTestRule<T>(clazz: Class<T>, logLevel: LogLevel, converterFactories: List<Converter.Factory>, callAdapterFactories: List<CallAdapter.Factory>) : TestRule",
+    "name": "class RetrofitTestRule<T>(clazz: Class<T>, logLevel: LogLevel = LogLevel.NONE, converterFactories: List<Converter.Factory> = listOf(\n        GsonConverterFactory.create(\n            Gson()\n        )\n    ), callAdapterFactories: List<CallAdapter.Factory> = emptyList()) : TestRule",
     "description": "io.github.thomsontomy.testrule.RetrofitTestRule",
     "location": "-retrofit -test -rule/io.github.thomsontomy.testrule/-retrofit-test-rule/index.html",
     "searchKeys": [
       "RetrofitTestRule",
-      "class RetrofitTestRule<T>(clazz: Class<T>, logLevel: LogLevel, converterFactories: List<Converter.Factory>, callAdapterFactories: List<CallAdapter.Factory>) : TestRule",
+      "class RetrofitTestRule<T>(clazz: Class<T>, logLevel: LogLevel = LogLevel.NONE, converterFactories: List<Converter.Factory> = listOf(\n        GsonConverterFactory.create(\n            Gson()\n        )\n    ), callAdapterFactories: List<CallAdapter.Factory> = emptyList()) : TestRule",
       "io.github.thomsontomy.testrule.RetrofitTestRule"
     ]
   },

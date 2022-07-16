@@ -1,10 +1,10 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
 $dokka.location:io.github.thomsontomy.testrule////PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/index.html
-$dokka.location:io.github.thomsontomy.testrule/LogLevel.BASIC///PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-log-level/-b-a-s-i-c/index.html
-$dokka.location:io.github.thomsontomy.testrule/LogLevel.BODY///PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-log-level/-b-o-d-y/index.html
-$dokka.location:io.github.thomsontomy.testrule/LogLevel.HEADERS///PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-log-level/-h-e-a-d-e-r-s/index.html
-$dokka.location:io.github.thomsontomy.testrule/LogLevel.NONE///PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-log-level/-n-o-n-e/index.html
+$dokka.location:io.github.thomsontomy.testrule/LogLevel.BASIC///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-retrofit -test -rule/io.github.thomsontomy.testrule/-log-level/-b-a-s-i-c/index.html
+$dokka.location:io.github.thomsontomy.testrule/LogLevel.BODY///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-retrofit -test -rule/io.github.thomsontomy.testrule/-log-level/-b-o-d-y/index.html
+$dokka.location:io.github.thomsontomy.testrule/LogLevel.HEADERS///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-retrofit -test -rule/io.github.thomsontomy.testrule/-log-level/-h-e-a-d-e-r-s/index.html
+$dokka.location:io.github.thomsontomy.testrule/LogLevel.NONE///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-retrofit -test -rule/io.github.thomsontomy.testrule/-log-level/-n-o-n-e/index.html
 $dokka.location:io.github.thomsontomy.testrule/LogLevel///PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-log-level/index.html
 $dokka.location:io.github.thomsontomy.testrule/RequestValidations///PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-request-validations/index.html
 $dokka.location:io.github.thomsontomy.testrule/RequestValidations/RequestValidations/#kotlin.String#kotlin.String#kotlin.Array[retrofit2.http.Header]#kotlin.String#kotlin.String/PointingToDeclaration/-retrofit -test -rule/io.github.thomsontomy.testrule/-request-validations/-request-validations.html
