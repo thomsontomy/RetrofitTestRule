@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
@@ -28,8 +29,14 @@ if(savedDarkMode === true){
 <body>
 <div class="navigation-wrapper" id="navigation-wrapper">
     <div id="leftToggler"><span class="icon-toggler"></span></div>
-    <div class="library-name"><a href="../../../index.html">Retrofit Test Rule</a></div>
-    <div>0.3.0</div>
+    <div class="library-name">
+        <a href="../../../index.html">
+            <span>Retrofit Test Rule</span>
+        </a>
+    </div>
+    <div>
+        0.4.0
+    </div>
     <div class="pull-right d-flex">
         <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
         <div id="searchBar"></div>
@@ -42,9 +49,10 @@ if(savedDarkMode === true){
     <div id="main">
         <div class="main-content" id="content"
              pageIds="Retrofit Test Rule::io.github.thomsontomy.testrule/RestRequest///PointingToDeclaration//-1091186763">
-            <div class="breadcrumbs"><a href="../../../index.html">Retrofit Test Rule</a>/<a
-                    href="../index.html">io.github.thomsontomy.testrule</a>/<a href="index.html">RestRequest</a>
-            </div>
+            <div class="breadcrumbs"><a href="../../../index.html">Retrofit Test Rule</a><span
+                    class="delimiter">/</span><a
+                    href="../index.html">io.github.thomsontomy.testrule</a><span
+                    class="delimiter">/</span><a href="index.html">RestRequest</a></div>
             <div class="cover ">
                 <h1 class="cover"><span>Rest</span>
                     <wbr></wbr>
@@ -67,12 +75,16 @@ if(savedDarkMode === true){
                             </div>
                             <span class="token keyword">annotation class </span><a
                                 href="index.html">RestRequest</a><span
-                                class="token punctuation">(</span>validations<span
+                                class="token punctuation">(</span><span class="parameters "><span
+                                class="parameter "><span class="token keyword">val </span>validations<span
                                 class="token operator">: </span><a
                                 href="../-request-validations/index.html">RequestValidations</a><span
-                                class="token punctuation">, </span>responseOptions<span
+                                class="token operator"> = </span>RequestValidations()<span
+                                class="token punctuation">, </span></span><span
+                                class="parameter "><span class="token keyword">val </span>responseOptions<span
                                 class="token operator">: </span><a
                                 href="../-response-options/index.html">ResponseOptions</a><span
+                                class="token operator"> = </span>ResponseOptions()</span></span><span
                                 class="token punctuation">)</span><span
                                 class="top-right-position"><span class="copy-icon"></span><div
                                 class="copy-popup-wrapper popup-to-left"><span
@@ -98,12 +110,11 @@ if(savedDarkMode === true){
                              data-filterable-set=":testrule:dokkaHtml/main">
                             <div class="main-subrow keyValue TabbedContent">
                                 <div class=""><span class="inline-flex">
-                        <div><a href="-rest-request.html"><span>Rest</span><wbr></wbr><span><span>Request</span></span></a></div>
+                <div><a href="-rest-request.html"><span>Rest</span><wbr></wbr><span><span>Request</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon"
                                    pointing-to="-1594726908%2FConstructors%2F-1091186763"></span>
-                          <div class="copy-popup-wrapper "><span
-                                  class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
                                 <div>
                                     <div class="title">
                                         <div class="platform-hinted "
@@ -116,14 +127,17 @@ if(savedDarkMode === true){
                                                         class="token keyword">fun </span><a
                                                         href="-rest-request.html"><span
                                                         class="token function">RestRequest</span></a><span
-                                                        class="token punctuation">(</span>validations<span
+                                                        class="token punctuation">(</span><span
+                                                        class="parameters "><span
+                                                        class="parameter ">validations<span
                                                         class="token operator">: </span><a
                                                         href="../-request-validations/index.html">RequestValidations</a><span
                                                         class="token operator"> = </span>RequestValidations()<span
-                                                        class="token punctuation">, </span>responseOptions<span
+                                                        class="token punctuation">, </span></span><span
+                                                        class="parameter ">responseOptions<span
                                                         class="token operator">: </span><a
                                                         href="../-response-options/index.html">ResponseOptions</a><span
-                                                        class="token operator"> = </span>ResponseOptions()<span
+                                                        class="token operator"> = </span>ResponseOptions()</span></span><span
                                                         class="token punctuation">)</span><span
                                                         class="top-right-position"><span
                                                         class="copy-icon"></span><div
@@ -147,12 +161,11 @@ if(savedDarkMode === true){
                              data-filterable-set=":testrule:dokkaHtml/main">
                             <div class="main-subrow keyValue ">
                                 <div class=""><span class="inline-flex">
-                        <div><a href="response-options.html">responseOptions</a></div>
+                <div><a href="response-options.html"><span>response</span><wbr></wbr><span><span>Options</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon"
                                    pointing-to="-340795925%2FProperties%2F-1091186763"></span>
-                          <div class="copy-popup-wrapper "><span
-                                  class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
                                 <div>
                                     <div class="title">
                                         <div class="platform-hinted "
@@ -196,12 +209,11 @@ if(savedDarkMode === true){
                              data-filterable-set=":testrule:dokkaHtml/main">
                             <div class="main-subrow keyValue ">
                                 <div class=""><span class="inline-flex">
-                        <div><a href="validations.html">validations</a></div>
+                <div><a href="validations.html"><span><span>validations</span></span></a></div>
 <span class="anchor-wrapper"><span class="anchor-icon"
                                    pointing-to="-101508594%2FProperties%2F-1091186763"></span>
-                          <div class="copy-popup-wrapper "><span
-                                  class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
+                  <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                </span></span></div>
                                 <div>
                                     <div class="title">
                                         <div class="platform-hinted "
@@ -242,12 +254,13 @@ if(savedDarkMode === true){
                 </div>
             </div>
         </div>
-        <div class="footer"><span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2022 Copyright</span><span
+        <div class="footer">
+            <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2022 Copyright</span><span
                 class="pull-right"><span>Generated by </span><a
                 href="https://github.com/Kotlin/dokka"><span>dokka</span><span
-                class="padded-icon"></span></a></span></div>
+                class="padded-icon"></span></a></span>
+        </div>
     </div>
 </div>
 </body>
 </html>
-

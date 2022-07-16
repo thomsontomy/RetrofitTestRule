@@ -5,7 +5,7 @@
 ### Configuration
 
 ```groovy
-testImplementation("io.github.thomsontomy:testrule:0.3.0")
+testImplementation("io.github.thomsontomy:testrule:0.4.0")
 ```
 
 ### Example

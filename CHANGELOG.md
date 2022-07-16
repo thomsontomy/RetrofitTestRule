@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+Version 0.4.0 *(2022-07-16)*
+----------------------------
+
+* Update kotlin and other library versions
+
 Version 0.3.0 *(2022-03-30)*
 ----------------------------
 

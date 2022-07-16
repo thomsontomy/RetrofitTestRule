@@ -13,7 +13,7 @@ integration test to make sure the retrofit service configuration is correct
 ### Configuration
 
 ```groovy
-testImplementation("io.github.thomsontomy:testrule:0.3.0")
+testImplementation("io.github.thomsontomy:testrule:0.4.0")
 ```
 
 ### Example
