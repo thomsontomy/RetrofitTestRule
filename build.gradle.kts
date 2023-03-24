@@ -1,7 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     dependencies {
-        classpath("com.vanniktech:gradle-maven-publish-plugin:0.24.0")
+        classpath("com.vanniktech:gradle-maven-publish-plugin:0.25.1")
     }
 }
 plugins {
