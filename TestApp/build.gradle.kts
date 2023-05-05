@@ -42,7 +42,7 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.google.code.gson:gson:2.10.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.0")
     testImplementation("junit:junit:4.13.2")
     testImplementation(project(path = ":testrule"))
     //testImplementation("io.github.thomsontomy:testrule:0.1.0")
