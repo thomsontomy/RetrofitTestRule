@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>RequestAssertions</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>RetrofitTestRule</span>
+            </a>
+    </div>
+    <div>
+    </div>
+    <div class="pull-right d-flex">
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":testrule:dokkaHtml/main">jvm</button>
+        </div>
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="RetrofitTestRule::io.github.thomsontomy.testrule/RequestAssertions///PointingToDeclaration//-1091186763">
+  <div class="breadcrumbs"><a href="../../../index.html">RetrofitTestRule</a><span class="delimiter">/</span><a href="../index.html">io.github.thomsontomy.testrule</a><span class="delimiter">/</span><span class="current">RequestAssertions</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Request</span><wbr></wbr><span><span>Assertions</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">RequestAssertions</a></div><p class="paragraph">Assertions over a captured <a href="../-request-snapshot/index.html">RequestSnapshot</a>.</p><p class="paragraph">Instances are created by <a href="../-retrofit-test-dsl/verify-request.html">RetrofitTestDsl.verifyRequest</a> and by the annotation driven rule, so assertions never need to be constructed directly.</p><p class="paragraph">Every failure message includes the full request, which makes a failing test self explanatory without enabling logging:</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">rule.verifyRequest {<br>    hasMethod(HttpMethod.POST)<br>    hasPath(&quot;/users&quot;)<br>    hasHeader(&quot;Authorization&quot;, &quot;Bearer token&quot;)<br>    hasBody(&quot;&quot;&quot;{&quot;name&quot;:&quot;tom&quot;}&quot;&quot;&quot;)<br>}</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,FUNCTION,PROPERTY">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-607907587%2FFunctions%2F-1091186763" anchor-label="hasBody" id="-607907587%2FFunctions%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-body.html"><span>has</span><wbr></wbr><span><span>Body</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-607907587%2FFunctions%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="has-body.html"><span class="token function">hasBody</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">expected<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Asserts the request body matches <a href="has-body.html">expected</a> using the configured <a href="../-body-matcher/index.html">BodyMatcher</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-357356903%2FFunctions%2F-1091186763" anchor-label="hasBodyFile" id="-357356903%2FFunctions%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-body-file.html"><span>has</span><wbr></wbr><span>Body</span><wbr></wbr><span><span>File</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-357356903%2FFunctions%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="has-body-file.html"><span class="token function">hasBodyFile</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">file<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Asserts the request body matches the contents of <a href="has-body-file.html">file</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="55675126%2FFunctions%2F-1091186763" anchor-label="hasHeader" id="55675126%2FFunctions%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-header.html"><span>has</span><wbr></wbr><span><span>Header</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="55675126%2FFunctions%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="has-header.html"><span class="token function">hasHeader</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Asserts the header <a href="has-header.html">name</a> is present.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1145164555%2FFunctions%2F-1091186763" anchor-label="hasMethod" id="1145164555%2FFunctions%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-method.html"><span>has</span><wbr></wbr><span><span>Method</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1145164555%2FFunctions%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="has-method.html"><span class="token function">hasMethod</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">expected<span class="token operator">: </span><a href="../-http-method/index.html">HttpMethod</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Asserts the HTTP method equals <a href="has-method.html">expected</a>.</p></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="has-method.html"><span class="token function">hasMethod</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">expected<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Asserts the HTTP method equals <a href="has-method.html">expected</a>, for example <code class="lang-kotlin">&quot;GET&quot;</code>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2031604262%2FFunctions%2F-1091186763" anchor-label="hasNoBody" id="2031604262%2FFunctions%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-no-body.html"><span>has</span><wbr></wbr><span>No</span><wbr></wbr><span><span>Body</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2031604262%2FFunctions%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="has-no-body.html"><span class="token function">hasNoBody</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Asserts the request has no body.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1420213952%2FFunctions%2F-1091186763" anchor-label="hasPath" id="-1420213952%2FFunctions%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-path.html"><span>has</span><wbr></wbr><span><span>Path</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1420213952%2FFunctions%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="has-path.html"><span class="token function">hasPath</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">expected<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Asserts the request path equals <a href="has-path.html">expected</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1818438247%2FFunctions%2F-1091186763" anchor-label="hasQuery" id="1818438247%2FFunctions%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-query.html"><span>has</span><wbr></wbr><span><span>Query</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1818438247%2FFunctions%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="has-query.html"><span class="token function">hasQuery</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Asserts the query parameter <a href="has-query.html">name</a> is present with any value.</p></div><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="has-query.html"><span class="token function">hasQuery</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">name<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Asserts the query parameter <a href="has-query.html">name</a> is present with <a href="has-query.html">value</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="-1639424108%2FProperties%2F-1091186763" anchor-label="request" id="-1639424108%2FProperties%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="request.html"><span><span>request</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1639424108%2FProperties%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="request.html">request</a><span class="token operator">: </span><a href="../-request-snapshot/index.html">RequestSnapshot</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2026 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

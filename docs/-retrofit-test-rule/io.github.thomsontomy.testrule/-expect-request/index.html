@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>ExpectRequest</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>RetrofitTestRule</span>
+            </a>
+    </div>
+    <div>
+    </div>
+    <div class="pull-right d-flex">
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":testrule:dokkaHtml/main">jvm</button>
+        </div>
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="RetrofitTestRule::io.github.thomsontomy.testrule/ExpectRequest///PointingToDeclaration//-1091186763">
+  <div class="breadcrumbs"><a href="../../../index.html">RetrofitTestRule</a><span class="delimiter">/</span><a href="../index.html">io.github.thomsontomy.testrule</a><span class="delimiter">/</span><span class="current">ExpectRequest</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Expect</span><wbr></wbr><span><span>Request</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">annotation class </span><a href="index.html">ExpectRequest</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>path<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span><span class="token string">&quot;&quot;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>method<span class="token operator">: </span><a href="../-http-method/index.html">HttpMethod</a><span class="token operator"> = </span>HttpMethod.ANY<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>query<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-query-param/index.html">QueryParam</a><span class="token operator">&gt;</span><span class="token operator"> = </span>[]<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>headers<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-header-value/index.html">HeaderValue</a><span class="token operator">&gt;</span><span class="token operator"> = </span>[]<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>bodyText<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span><span class="token string">&quot;&quot;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>bodyFile<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span><span class="token string">&quot;&quot;</span></span></span><span class="token punctuation">)</span></div><p class="paragraph">Expectations applied to a captured HTTP request.</p><p class="paragraph">Every property is optional. An empty <a href="path.html">path</a>, an <a href="method.html">HttpMethod.ANY</a> and empty body properties mean &quot;do not validate this aspect&quot;. When both <a href="body-text.html">bodyText</a> and <a href="body-file.html">bodyFile</a> are set the test fails with an explicit error rather than silently preferring one of them.</p><h4 class="">See also</h4><div class="table"><div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-query-param/index.html"><span>Query</span><wbr></wbr><span><span>Param</span></span></a></div></span></div><div></div></div></div><div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-header-value/index.html"><span>Header</span><wbr></wbr><span><span>Value</span></span></a></div></span></div><div></div></div></div></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,FUNCTION,PROPERTY">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="221053391%2FProperties%2F-1091186763" anchor-label="bodyFile" id="221053391%2FProperties%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="body-file.html"><span>body</span><wbr></wbr><span><span>File</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="221053391%2FProperties%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="body-file.html">bodyFile</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">expected request body loaded from a resource file or file system path</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1473252158%2FProperties%2F-1091186763" anchor-label="bodyText" id="1473252158%2FProperties%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="body-text.html"><span>body</span><wbr></wbr><span><span>Text</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1473252158%2FProperties%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="body-text.html">bodyText</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">expected request body as inline text</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-810056089%2FProperties%2F-1091186763" anchor-label="headers" id="-810056089%2FProperties%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="headers.html"><span><span>headers</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-810056089%2FProperties%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="headers.html">headers</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-header-value/index.html">HeaderValue</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">request headers that must be present</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-959495028%2FProperties%2F-1091186763" anchor-label="method" id="-959495028%2FProperties%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="method.html"><span><span>method</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-959495028%2FProperties%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="method.html">method</a><span class="token operator">: </span><a href="../-http-method/index.html">HttpMethod</a></div><div class="brief "><p class="paragraph">expected HTTP method, or <a href="../-http-method/-a-n-y/index.html">HttpMethod.ANY</a> to accept any method</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="229476808%2FProperties%2F-1091186763" anchor-label="path" id="229476808%2FProperties%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="path.html"><span><span>path</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="229476808%2FProperties%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="path.html">path</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">expected request path, relative to the mock server. A query string may be included for convenience (<code class="lang-kotlin">/api/test?id=john</code>); it is validated parameter by parameter and is therefore order independent.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1816954725%2FProperties%2F-1091186763" anchor-label="query" id="1816954725%2FProperties%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="query.html"><span><span>query</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1816954725%2FProperties%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="query.html">query</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-array/index.html">Array</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-query-param/index.html">QueryParam</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">individual query parameters that must be present</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2026 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

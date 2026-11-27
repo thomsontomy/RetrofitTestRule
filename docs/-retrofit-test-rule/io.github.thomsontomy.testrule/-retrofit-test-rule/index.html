@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>RetrofitTestRule</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>RetrofitTestRule</span>
+            </a>
+    </div>
+    <div>
+    </div>
+    <div class="pull-right d-flex">
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":testrule:dokkaHtml/main">jvm</button>
+        </div>
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="RetrofitTestRule::io.github.thomsontomy.testrule/RetrofitTestRule///PointingToDeclaration//-1091186763">
+  <div class="breadcrumbs"><a href="../../../index.html">RetrofitTestRule</a><span class="delimiter">/</span><a href="../index.html">io.github.thomsontomy.testrule</a><span class="delimiter">/</span><span class="current">RetrofitTestRule</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Retrofit</span><wbr></wbr><span>Test</span><wbr></wbr><span><span>Rule</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">RetrofitTestRule</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt;</span> <span><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation builtin">JvmOverloads</span></a> </span><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">serviceClass<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html">Class</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">logLevel<span class="token operator">: </span><a href="../-log-level/index.html">LogLevel</a><span class="token operator"> = </span>LogLevel.NONE<span class="token punctuation">, </span></span><span class="parameter ">converterFactories<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="retrofit2/Converter.Factory///PointingToDeclaration/">Converter.Factory</span><span class="token operator">&gt;</span><span class="token operator"> = </span>defaultConverterFactories()<span class="token punctuation">, </span></span><span class="parameter ">callAdapterFactories<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="retrofit2/CallAdapter.Factory///PointingToDeclaration/">CallAdapter.Factory</span><span class="token operator">&gt;</span><span class="token operator"> = </span>emptyList()<span class="token punctuation">, </span></span><span class="parameter ">logger<span class="token operator">: </span><a href="../-test-logger/index.html">TestLogger</a><span class="token operator"> = </span>TestLogger.STDOUT</span></span><span class="token punctuation">)</span> : <span data-unresolved-link="org.junit.rules/TestRule///PointingToDeclaration/">TestRule</span>, <a href="../-retrofit-test-dsl/index.html">RetrofitTestDsl</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt; </span></div><p class="paragraph">JUnit 4 <span data-unresolved-link="org.junit.rules/TestRule///PointingToDeclaration/">TestRule</span> that runs a Retrofit service against an OkHttp <span data-unresolved-link="okhttp3.mockwebserver/MockWebServer///PointingToDeclaration/">MockWebServer</span>.</p><p class="paragraph">The rule starts the server before the test body, enqueues the responses declared with <a href="../-rest-request/index.html">RestRequest</a> (or programmatically through the <a href="../-retrofit-test-dsl/index.html">RetrofitTestDsl</a> methods), and validates every captured request after the body completes.</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">class GitHubServiceTest {<br>    @get:Rule<br>    val rule = RetrofitTestRule(GitHubService::class.java)<br><br>    @Test<br>    @RestRequest(<br>        expect = ExpectRequest(path = &quot;/users/me&quot;, method = HttpMethod.GET),<br>        respond = RespondWith(bodyText = &quot;&quot;&quot;{&quot;login&quot;:&quot;octocat&quot;}&quot;&quot;&quot;),<br>    )<br>    fun `loads the profile`() = runTest {<br>        val service = rule.getService()<br>        assertEquals(&quot;octocat&quot;, service.profile().login)<br>    }<br>}</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">The rule is also a full programmatic API; see <a href="../-retrofit-test-dsl/index.html">RetrofitTestDsl</a> for enqueuing responses and asserting on requests without annotations.</p><h4 class="">Parameters</h4><div class="table"><div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>T</span></span></u></div></span></div><div><div class="title"><p class="paragraph">Retrofit service interface</p></div></div></div></div><div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>service</span><wbr></wbr><span><span>Class</span></span></u></div></span></div><div><div class="title"><p class="paragraph">Retrofit service interface to instantiate</p></div></div></div></div><div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>log</span><wbr></wbr><span><span>Level</span></span></u></div></span></div><div><div class="title"><p class="paragraph">amount of request logging, <a href="../-log-level/-n-o-n-e/index.html">LogLevel.NONE</a> by default</p></div></div></div></div><div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>converter</span><wbr></wbr><span><span>Factories</span></span></u></div></span></div><div><div class="title"><p class="paragraph">converter factories applied to the generated Retrofit instance</p></div></div></div></div><div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span>call</span><wbr></wbr><span>Adapter</span><wbr></wbr><span><span>Factories</span></span></u></div></span></div><div><div class="title"><p class="paragraph">call adapter factories applied to the generated Retrofit instance</p></div></div></div></div><div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>logger</span></span></u></div></span></div><div><div class="title"><p class="paragraph">sink used for request logging</p></div></div></div></div></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,FUNCTION,PROPERTY">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="2122892051%2FConstructors%2F-1091186763" anchor-label="RetrofitTestRule" id="2122892051%2FConstructors%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-retrofit-test-rule.html"><span>Retrofit</span><wbr></wbr><span>Test</span><wbr></wbr><span><span>Rule</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2122892051%2FConstructors%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation builtin">JvmOverloads</span></a></div></div><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">serviceClass<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html">Class</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">logLevel<span class="token operator">: </span><a href="../-log-level/index.html">LogLevel</a><span class="token operator"> = </span>LogLevel.NONE<span class="token punctuation">, </span></span><span class="parameter ">converterFactories<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="retrofit2/Converter.Factory///PointingToDeclaration/">Converter.Factory</span><span class="token operator">&gt;</span><span class="token operator"> = </span>defaultConverterFactories()<span class="token punctuation">, </span></span><span class="parameter ">callAdapterFactories<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="retrofit2/CallAdapter.Factory///PointingToDeclaration/">CallAdapter.Factory</span><span class="token operator">&gt;</span><span class="token operator"> = </span>emptyList()<span class="token punctuation">, </span></span><span class="parameter ">logger<span class="token operator">: </span><a href="../-test-logger/index.html">TestLogger</a><span class="token operator"> = </span>TestLogger.STDOUT</span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="1887509296%2FFunctions%2F-1091186763" anchor-label="apply" id="1887509296%2FFunctions%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="apply.html"><span><span>apply</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1887509296%2FFunctions%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="apply.html"><span class="token function">apply</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">base<span class="token operator">: </span><span data-unresolved-link="org.junit.runners.model/Statement///PointingToDeclaration/">Statement</span><span class="token punctuation">, </span></span><span class="parameter ">description<span class="token operator">: </span><span data-unresolved-link="org.junit.runner/Description///PointingToDeclaration/">Description</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="org.junit.runners.model/Statement///PointingToDeclaration/">Statement</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-33610899%2FFunctions%2F-1091186763" anchor-label="assertAllRequestsConsumed" id="-33610899%2FFunctions%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="assert-all-requests-consumed.html"><span>assert</span><wbr></wbr><span>All</span><wbr></wbr><span>Requests</span><wbr></wbr><span><span>Consumed</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-33610899%2FFunctions%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="assert-all-requests-consumed.html"><span class="token function">assertAllRequestsConsumed</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Fails when the service made requests that were never validated.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1796223140%2FFunctions%2F-1091186763" anchor-label="assertNoPendingResponses" id="1796223140%2FFunctions%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="assert-no-pending-responses.html"><span>assert</span><wbr></wbr><span>No</span><wbr></wbr><span>Pending</span><wbr></wbr><span><span>Responses</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1796223140%2FFunctions%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="assert-no-pending-responses.html"><span class="token function">assertNoPendingResponses</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Fails when responses were enqueued but never requested, which usually means the test forgot to exercise a code path.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-280463612%2FFunctions%2F-1091186763" anchor-label="enqueue" id="-280463612%2FFunctions%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="enqueue.html"><span><span>enqueue</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-280463612%2FFunctions%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="enqueue.html"><span class="token function">enqueue</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">response<span class="token operator">: </span><a href="../-response-spec/index.html">ResponseSpec</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Enqueues a fully described response.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="837037429%2FFunctions%2F-1091186763" anchor-label="enqueueNetworkError" id="837037429%2FFunctions%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="enqueue-network-error.html"><span>enqueue</span><wbr></wbr><span>Network</span><wbr></wbr><span><span>Error</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="837037429%2FFunctions%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="enqueue-network-error.html"><span class="token function">enqueueNetworkError</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">behavior<span class="token operator">: </span><a href="../-socket-behavior/index.html">SocketBehavior</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Enqueues a response that fails at the socket level.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1761803079%2FFunctions%2F-1091186763" anchor-label="enqueueResponse" id="-1761803079%2FFunctions%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="enqueue-response.html"><span>enqueue</span><wbr></wbr><span><span>Response</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1761803079%2FFunctions%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="enqueue-response.html"><span class="token function">enqueueResponse</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">code<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">body<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">headers<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.collections/-map/index.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">delayMs<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-long/index.html">Long</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Enqueues a response.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-877729265%2FFunctions%2F-1091186763" anchor-label="enqueueResponseFromFile" id="-877729265%2FFunctions%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="enqueue-response-from-file.html"><span>enqueue</span><wbr></wbr><span>Response</span><wbr></wbr><span>From</span><wbr></wbr><span><span>File</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-877729265%2FFunctions%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="enqueue-response-from-file.html"><span class="token function">enqueueResponseFromFile</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">file<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">code<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">headers<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.collections/-map/index.html">Map</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Enqueues a response whose body is read from a test resource or file.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-147955661%2FFunctions%2F-1091186763" anchor-label="getService" id="-147955661%2FFunctions%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-service.html"><span>get</span><wbr></wbr><span><span>Service</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-147955661%2FFunctions%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="get-service.html"><span class="token function">getService</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">T</a></div><div class="brief "><p class="paragraph">Creates the service backed by the mock server, using the configured converter factories.</p></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="get-service.html"><span class="token function">getService</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">configure<span class="token operator">: </span><span class="token keyword"></span><span data-unresolved-link="retrofit2/Retrofit.Builder///PointingToDeclaration/">Retrofit.Builder</span><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">T</a></div><div class="brief "><p class="paragraph">Creates the service after applying <a href="get-service.html">configure</a> to a pre-configured <span data-unresolved-link="retrofit2/Retrofit.Builder///PointingToDeclaration/">Retrofit.Builder</span>.</p></div><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="get-service.html"><span class="token function">getService</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">client<span class="token operator">: </span><span data-unresolved-link="okhttp3/OkHttpClient///PointingToDeclaration/">OkHttpClient</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">T</a></div><div class="brief "><p class="paragraph">Creates the service with a custom client, preserving production interceptors, authenticators and timeouts. The base URL still points at the mock server.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1135041976%2FFunctions%2F-1091186763" anchor-label="service" id="-1135041976%2FFunctions%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="service.html"><span><span>service</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1135041976%2FFunctions%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="service.html"><span class="token function">service</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">factory<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><span data-unresolved-link="okhttp3/HttpUrl///PointingToDeclaration/">HttpUrl</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="index.html">T</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">T</a></div><div class="brief "><p class="paragraph">Creates the service from a factory that receives the mock server base URL.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1076853253%2FFunctions%2F-1091186763" anchor-label="start" id="-1076853253%2FFunctions%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="start.html"><span><span>start</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1076853253%2FFunctions%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="start.html"><span class="token function">start</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">testClass<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html">Class</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Starts the mock server eagerly.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1430990180%2FFunctions%2F-1091186763" anchor-label="stop" id="1430990180%2FFunctions%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="stop.html"><span><span>stop</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1430990180%2FFunctions%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="stop.html"><span class="token function">stop</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Stops the mock server eagerly. Idempotent.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1912256157%2FFunctions%2F-1091186763" anchor-label="takeRequest" id="-1912256157%2FFunctions%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="take-request.html"><span>take</span><wbr></wbr><span><span>Request</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1912256157%2FFunctions%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="take-request.html"><span class="token function">takeRequest</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">timeout<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-request-snapshot/index.html">RequestSnapshot</a></div><div class="brief "><p class="paragraph">Waits for the next request and returns it.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1592443275%2FFunctions%2F-1091186763" anchor-label="verifyRequest" id="1592443275%2FFunctions%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="verify-request.html"><span>verify</span><wbr></wbr><span><span>Request</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1592443275%2FFunctions%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="verify-request.html"><span class="token function">verifyRequest</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">timeout<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a><span class="token punctuation">, </span></span><span class="parameter ">block<span class="token operator">: </span><span class="token keyword"></span><a href="../-request-assertions/index.html">RequestAssertions</a><span class="token punctuation">.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-unit/index.html">Unit</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-request-snapshot/index.html">RequestSnapshot</a></div><div class="brief "><p class="paragraph">Waits for the next request and applies <a href="verify-request.html">block</a> to it.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="-82829162%2FProperties%2F-1091186763" anchor-label="baseUrl" id="-82829162%2FProperties%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="base-url.html"><span>base</span><wbr></wbr><span><span>Url</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-82829162%2FProperties%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="base-url.html">baseUrl</a><span class="token operator">: </span><span data-unresolved-link="okhttp3/HttpUrl///PointingToDeclaration/">HttpUrl</span></div><div class="brief "><p class="paragraph">Base URL of the running mock server, always ending with <code class="lang-kotlin">/</code>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-46282492%2FProperties%2F-1091186763" anchor-label="bodyMatcher" id="-46282492%2FProperties%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="body-matcher.html"><span>body</span><wbr></wbr><span><span>Matcher</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-46282492%2FProperties%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">var </span><a href="body-matcher.html">bodyMatcher</a><span class="token operator">: </span><a href="../-body-matcher/index.html">BodyMatcher</a></div><div class="brief "><p class="paragraph">Comparison strategy used by <a href="../-request-assertions/has-body.html">RequestAssertions.hasBody</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-101366389%2FProperties%2F-1091186763" anchor-label="pendingResponses" id="-101366389%2FProperties%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="pending-responses.html"><span>pending</span><wbr></wbr><span><span>Responses</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-101366389%2FProperties%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="pending-responses.html">pendingResponses</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><p class="paragraph">Number of enqueued responses that have not been served yet.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2062519186%2FProperties%2F-1091186763" anchor-label="recordedRequests" id="2062519186%2FProperties%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="recorded-requests.html"><span>recorded</span><wbr></wbr><span><span>Requests</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2062519186%2FProperties%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="recorded-requests.html">recordedRequests</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../-request-snapshot/index.html">RequestSnapshot</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Every request captured so far, in the order it arrived.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-854996221%2FProperties%2F-1091186763" anchor-label="server" id="-854996221%2FProperties%2F-1091186763" data-filterable-set=":testrule:dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":testrule:dokkaHtml/main" data-filterable-set=":testrule:dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="server.html"><span><span>server</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-854996221%2FProperties%2F-1091186763"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":testrule:dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="server.html">server</a><span class="token operator">: </span><span data-unresolved-link="okhttp3.mockwebserver/MockWebServer///PointingToDeclaration/">MockWebServer</span></div><div class="brief "><p class="paragraph">The underlying mock web server, for advanced scenarios such as custom dispatchers.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2026 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>
