@@ -1,6 +1,7 @@
 package io.github.thomsontomy.testrule
 
 import com.google.gson.Gson
+import java.time.Duration
 import okhttp3.HttpUrl
 import okhttp3.OkHttpClient
 import okhttp3.mockwebserver.MockWebServer
@@ -11,7 +12,6 @@ import retrofit2.CallAdapter
 import retrofit2.Converter
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.time.Duration
 
 /**
  * The default converter factories: Gson, so that JSON service interfaces work out of the box.
@@ -19,8 +19,7 @@ import java.time.Duration
  * Pass a different list to the constructor when production uses Moshi, kotlinx.serialization or a
  * custom converter.
  */
-fun defaultConverterFactories(): List<Converter.Factory> =
-    listOf(GsonConverterFactory.create(Gson()))
+fun defaultConverterFactories(): List<Converter.Factory> = listOf(GsonConverterFactory.create(Gson()))
 
 /**
  * Kotlin friendly factory that avoids passing the service class explicitly.
@@ -35,8 +34,7 @@ inline fun <reified T : Any> retrofitTestRule(
     converterFactories: List<Converter.Factory> = defaultConverterFactories(),
     callAdapterFactories: List<CallAdapter.Factory> = emptyList(),
     logger: TestLogger = TestLogger.STDOUT,
-): RetrofitTestRule<T> =
-    RetrofitTestRule(T::class.java, logLevel, converterFactories, callAdapterFactories, logger)
+): RetrofitTestRule<T> = RetrofitTestRule(T::class.java, logLevel, converterFactories, callAdapterFactories, logger)
 
 /**
  * JUnit 4 [TestRule] that runs a Retrofit service against an OkHttp [MockWebServer].
@@ -78,7 +76,8 @@ class RetrofitTestRule<T : Any> @JvmOverloads constructor(
     converterFactories: List<Converter.Factory> = defaultConverterFactories(),
     callAdapterFactories: List<CallAdapter.Factory> = emptyList(),
     logger: TestLogger = TestLogger.STDOUT,
-) : TestRule, RetrofitTestDsl<T> {
+) : TestRule,
+    RetrofitTestDsl<T> {
 
     private val support = RetrofitTestSupport(
         serviceClass = serviceClass,
@@ -112,27 +111,18 @@ class RetrofitTestRule<T : Any> @JvmOverloads constructor(
 
     override fun enqueue(response: ResponseSpec) = support.enqueue(response)
 
-    override fun enqueueResponse(
-        code: Int,
-        body: String,
-        headers: Map<String, String>,
-        delayMs: Long,
-    ) = support.enqueueResponse(code, body, headers, delayMs)
+    override fun enqueueResponse(code: Int, body: String, headers: Map<String, String>, delayMs: Long) =
+        support.enqueueResponse(code, body, headers, delayMs)
 
-    override fun enqueueResponseFromFile(
-        file: String,
-        code: Int,
-        headers: Map<String, String>,
-    ) = support.enqueueResponseFromFile(file, code, headers)
+    override fun enqueueResponseFromFile(file: String, code: Int, headers: Map<String, String>) =
+        support.enqueueResponseFromFile(file, code, headers)
 
     override fun enqueueNetworkError(behavior: SocketBehavior) = support.enqueueNetworkError(behavior)
 
     override fun takeRequest(timeout: Duration): RequestSnapshot = support.takeRequest(timeout)
 
-    override fun verifyRequest(
-        timeout: Duration,
-        block: RequestAssertions.() -> Unit,
-    ): RequestSnapshot = support.verifyRequest(timeout, block)
+    override fun verifyRequest(timeout: Duration, block: RequestAssertions.() -> Unit): RequestSnapshot =
+        support.verifyRequest(timeout, block)
 
     override fun assertAllRequestsConsumed() = support.assertAllRequestsConsumed()
 

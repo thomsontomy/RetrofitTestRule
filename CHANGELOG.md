@@ -28,6 +28,8 @@ A full rewrite of the rule. See the README for the complete API reference and th
 * Fixed resource lookups resolving against the service interface instead of the test class
 * Fixed the mock server only starting when an annotation was present
 * Added a test suite for the library itself
+* Added Trunk Code Quality linting (ktlint, actionlint, markdownlint, yamllint, gitleaks) with the
+  Kotlin style in `.editorconfig`, and a lint job in CI
 
 Version 0.4.0 *(2022-07-16)*
 ----------------------------
@@ -47,4 +49,5 @@ Version 0.2.0 *(2022-03-27)*
 
 Version 0.1.0 *(2022-03-20)*
 ----------------------------
+
 Initial release

@@ -2,7 +2,12 @@ package com.thomson.testapp.service
 
 import com.google.gson.annotations.SerializedName
 import retrofit2.Call
-import retrofit2.http.*
+import retrofit2.http.Body
+import retrofit2.http.GET
+import retrofit2.http.POST
+import retrofit2.http.PUT
+import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface GitHubService {
 
@@ -23,12 +28,12 @@ data class User(
     @SerializedName("name")
     val name: String,
     @SerializedName("url")
-    val url: String
+    val url: String,
 )
 
 data class UserType(
     @SerializedName("startsWith")
     val startsWith: String,
     @SerializedName("permission")
-    val permission: String
+    val permission: String,
 )

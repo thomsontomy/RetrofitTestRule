@@ -1,6 +1,8 @@
 package io.github.thomsontomy.testrule
 
 import io.github.thomsontomy.testrule.service.TestService
+import java.io.IOException
+import java.time.Duration
 import okhttp3.OkHttpClient
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Assertions.assertEquals
@@ -9,8 +11,6 @@ import org.junit.jupiter.api.Assertions.assertThrows
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-import java.io.IOException
-import java.time.Duration
 
 class RetrofitTestSupportTest {
 

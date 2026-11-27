@@ -1,16 +1,15 @@
 package io.github.thomsontomy.testrule
 
 import io.github.thomsontomy.testrule.service.TestService
-import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Assertions.assertTrue
-import org.junit.jupiter.api.Assertions.assertThrows
-import org.junit.jupiter.api.Test
 import java.nio.file.Files
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertThrows
+import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Test
 
 class ResourceResolverTest {
 
-    private fun resolver() =
-        ResourceResolver(ResourceResolverTest::class.java, TestService::class.java)
+    private fun resolver() = ResourceResolver(ResourceResolverTest::class.java, TestService::class.java)
 
     @Test
     fun `resolves a resource relative to the test class package`() {
@@ -20,7 +19,7 @@ class ResourceResolverTest {
     @Test
     fun `resolves a resource at an absolute classpath path`() {
         assertTrue(
-            resolver().read("/io/github/thomsontomy/testrule/body.json").contains("octocat")
+            resolver().read("/io/github/thomsontomy/testrule/body.json").contains("octocat"),
         )
     }
 

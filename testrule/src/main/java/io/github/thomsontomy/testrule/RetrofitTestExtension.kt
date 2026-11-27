@@ -1,5 +1,7 @@
 package io.github.thomsontomy.testrule
 
+import java.lang.reflect.AnnotatedElement
+import java.time.Duration
 import okhttp3.HttpUrl
 import okhttp3.OkHttpClient
 import okhttp3.mockwebserver.MockWebServer
@@ -9,8 +11,6 @@ import org.junit.jupiter.api.extension.ExtensionContext
 import retrofit2.CallAdapter
 import retrofit2.Converter
 import retrofit2.Retrofit
-import java.lang.reflect.AnnotatedElement
-import java.time.Duration
 
 /**
  * JUnit 5 counterpart of [RetrofitTestRule].
@@ -51,7 +51,9 @@ class RetrofitTestExtension<T : Any> @JvmOverloads constructor(
     converterFactories: List<Converter.Factory> = defaultConverterFactories(),
     callAdapterFactories: List<CallAdapter.Factory> = emptyList(),
     logger: TestLogger = TestLogger.STDOUT,
-) : BeforeEachCallback, AfterEachCallback, RetrofitTestDsl<T> {
+) : BeforeEachCallback,
+    AfterEachCallback,
+    RetrofitTestDsl<T> {
 
     private val support = RetrofitTestSupport(
         serviceClass = serviceClass,
@@ -106,27 +108,18 @@ class RetrofitTestExtension<T : Any> @JvmOverloads constructor(
 
     override fun enqueue(response: ResponseSpec) = support.enqueue(response)
 
-    override fun enqueueResponse(
-        code: Int,
-        body: String,
-        headers: Map<String, String>,
-        delayMs: Long,
-    ) = support.enqueueResponse(code, body, headers, delayMs)
+    override fun enqueueResponse(code: Int, body: String, headers: Map<String, String>, delayMs: Long) =
+        support.enqueueResponse(code, body, headers, delayMs)
 
-    override fun enqueueResponseFromFile(
-        file: String,
-        code: Int,
-        headers: Map<String, String>,
-    ) = support.enqueueResponseFromFile(file, code, headers)
+    override fun enqueueResponseFromFile(file: String, code: Int, headers: Map<String, String>) =
+        support.enqueueResponseFromFile(file, code, headers)
 
     override fun enqueueNetworkError(behavior: SocketBehavior) = support.enqueueNetworkError(behavior)
 
     override fun takeRequest(timeout: Duration): RequestSnapshot = support.takeRequest(timeout)
 
-    override fun verifyRequest(
-        timeout: Duration,
-        block: RequestAssertions.() -> Unit,
-    ): RequestSnapshot = support.verifyRequest(timeout, block)
+    override fun verifyRequest(timeout: Duration, block: RequestAssertions.() -> Unit): RequestSnapshot =
+        support.verifyRequest(timeout, block)
 
     override fun assertAllRequestsConsumed() = support.assertAllRequestsConsumed()
 

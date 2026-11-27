@@ -32,7 +32,4 @@ interface TestService {
 }
 
 /** Simple payload used by [TestService.create]. */
-data class User(
-    val name: String,
-    val url: String,
-)
+data class User(val name: String, val url: String)

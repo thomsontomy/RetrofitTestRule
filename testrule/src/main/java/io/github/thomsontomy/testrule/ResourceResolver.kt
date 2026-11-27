@@ -15,10 +15,7 @@ import java.io.IOException
  * Resolution failures raise an [AssertionError] that lists every attempted location, so a typo in
  * a file name is immediately obvious.
  */
-internal class ResourceResolver(
-    private val testClass: Class<*>?,
-    private val serviceClass: Class<*>,
-) {
+internal class ResourceResolver(private val testClass: Class<*>?, private val serviceClass: Class<*>) {
 
     fun read(file: String): String {
         val attempts = mutableListOf<String>()
@@ -56,7 +53,7 @@ internal class ResourceResolver(
                 append("\nTried:")
                 attempts.forEach { append("\n  - ").append(it) }
                 append("\n\nPlace the file in `src/test/resources` next to the test class, or pass an absolute path.")
-            }
+            },
         )
     }
 

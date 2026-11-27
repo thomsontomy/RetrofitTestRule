@@ -1,10 +1,10 @@
 package io.github.thomsontomy.testrule
 
+import java.time.Duration
 import okhttp3.HttpUrl
 import okhttp3.OkHttpClient
 import okhttp3.mockwebserver.MockWebServer
 import retrofit2.Retrofit
-import java.time.Duration
 
 /**
  * Default time the rule waits for an expected request before failing.
@@ -123,11 +123,7 @@ interface RetrofitTestDsl<T : Any> {
     )
 
     /** Enqueues a response whose body is read from a test resource or file. */
-    fun enqueueResponseFromFile(
-        file: String,
-        code: Int = 200,
-        headers: Map<String, String> = emptyMap(),
-    )
+    fun enqueueResponseFromFile(file: String, code: Int = 200, headers: Map<String, String> = emptyMap())
 
     /**
      * Enqueues a response that fails at the socket level.

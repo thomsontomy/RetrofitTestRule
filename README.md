@@ -275,9 +275,33 @@ your test code.
 - Binary request bodies are decoded as UTF-8 lossily; use `server` for raw bytes.
 - Structural JSON comparison treats numbers literally: `1` and `1.0` are different.
 
+## Linting
+
+The repository uses [Trunk](https://trunk.io) to aggregate its linters. Pinned versions live in
+[`.trunk/trunk.yaml`](.trunk/trunk.yaml), and the Kotlin style is defined in
+[`.editorconfig`](.editorconfig).
+
+| Linter | Scope |
+| --- | --- |
+| `ktlint` | Kotlin and Gradle Kotlin DSL |
+| `actionlint` | GitHub Actions workflows |
+| `markdownlint` | Markdown |
+| `yamllint` | YAML |
+| `gitleaks` | Committed secrets |
+
+Install the CLI once, then check or auto-format:
+
+```shell
+curl https://get.trunk.io -fsSL | bash
+trunk check --all
+trunk fmt
+```
+
+CI runs `trunk-io/trunk-action@v2.0.0` on every push and pull request.
+
 ## License
 
-```
+```text
 Copyright 2022 Thomson Thomas
 
 Licensed under the Apache License, Version 2.0 (the "License");

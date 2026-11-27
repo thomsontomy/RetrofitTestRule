@@ -2,7 +2,6 @@ package com.thomson.testapp.service
 
 import com.google.gson.annotations.SerializedName
 
-
 data class Owner(
     @SerializedName("login") var login: String? = null,
     @SerializedName("id") var id: Int? = null,
@@ -21,5 +20,5 @@ data class Owner(
     @SerializedName("events_url") var eventsUrl: String? = null,
     @SerializedName("received_events_url") var receivedEventsUrl: String? = null,
     @SerializedName("type") var type: String? = null,
-    @SerializedName("site_admin") var siteAdmin: Boolean? = null
+    @SerializedName("site_admin") var siteAdmin: Boolean? = null,
 )

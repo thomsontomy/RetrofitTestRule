@@ -1,8 +1,8 @@
 package io.github.thomsontomy.testrule
 
+import java.util.TreeMap
 import okhttp3.HttpUrl
 import okhttp3.mockwebserver.RecordedRequest
-import java.util.TreeMap
 
 /**
  * An immutable snapshot of an HTTP request captured by the mock server.

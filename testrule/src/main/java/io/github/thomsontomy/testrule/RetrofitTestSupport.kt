@@ -1,5 +1,8 @@
 package io.github.thomsontomy.testrule
 
+import java.io.IOException
+import java.time.Duration
+import java.util.concurrent.TimeUnit
 import okhttp3.HttpUrl
 import okhttp3.OkHttpClient
 import okhttp3.mockwebserver.MockResponse
@@ -8,9 +11,6 @@ import okhttp3.mockwebserver.SocketPolicy
 import retrofit2.CallAdapter
 import retrofit2.Converter
 import retrofit2.Retrofit
-import java.io.IOException
-import java.time.Duration
-import java.util.concurrent.TimeUnit
 
 /**
  * Framework agnostic engine behind [RetrofitTestRule] and [RetrofitTestExtension].
@@ -44,7 +44,8 @@ class RetrofitTestSupport<T : Any>(
     private val callAdapterFactories: List<CallAdapter.Factory> = emptyList(),
     private val logLevel: LogLevel = LogLevel.NONE,
     private val logger: TestLogger = TestLogger.STDOUT,
-) : RetrofitTestDsl<T>, AutoCloseable {
+) : RetrofitTestDsl<T>,
+    AutoCloseable {
 
     private var mockWebServer = MockWebServer()
     private val capturedRequests = mutableListOf<RequestSnapshot>()
@@ -141,18 +142,13 @@ class RetrofitTestSupport<T : Any>(
         enqueuedResponses += response
     }
 
-    override fun enqueueResponse(
-        code: Int,
-        body: String,
-        headers: Map<String, String>,
-        delayMs: Long,
-    ) = enqueue(ResponseSpec(code = code, body = body, headers = headers, delayMs = delayMs))
+    override fun enqueueResponse(code: Int, body: String, headers: Map<String, String>, delayMs: Long) =
+        enqueue(ResponseSpec(code = code, body = body, headers = headers, delayMs = delayMs))
 
     override fun enqueueResponseFromFile(file: String, code: Int, headers: Map<String, String>) =
         enqueue(ResponseSpec(code = code, body = resolver.read(file), headers = headers))
 
-    override fun enqueueNetworkError(behavior: SocketBehavior) =
-        enqueue(ResponseSpec(socketBehavior = behavior))
+    override fun enqueueNetworkError(behavior: SocketBehavior) = enqueue(ResponseSpec(socketBehavior = behavior))
 
     override fun takeRequest(timeout: Duration): RequestSnapshot {
         ensureStarted()
@@ -169,10 +165,7 @@ class RetrofitTestSupport<T : Any>(
         return snapshot
     }
 
-    override fun verifyRequest(
-        timeout: Duration,
-        block: RequestAssertions.() -> Unit,
-    ): RequestSnapshot {
+    override fun verifyRequest(timeout: Duration, block: RequestAssertions.() -> Unit): RequestSnapshot {
         val request = takeRequest(timeout)
         RequestAssertions(request, resolver, bodyMatcher).block()
         return request
@@ -196,7 +189,7 @@ class RetrofitTestSupport<T : Any>(
                 append("The service made ").append(unexpected.size)
                 append(" request(s) that were not covered by @RestRequest or verifyRequest.")
                 unexpected.forEach { append("\n\n").append(it.format()) }
-            }
+            },
         )
     }
 
@@ -210,7 +203,7 @@ class RetrofitTestSupport<T : Any>(
                 enqueuedResponses.takeLast(unused).forEachIndexed { index, spec ->
                     append("\n  ").append(index + 1).append(". ").append(spec)
                 }
-            }
+            },
         )
     }
 
@@ -291,7 +284,7 @@ class RetrofitTestSupport<T : Any>(
     private fun RespondWith.toResponseSpec(): ResponseSpec {
         if (bodyText.isNotEmpty() && bodyFile.isNotEmpty()) {
             throw IllegalArgumentException(
-                "RespondWith declares both bodyText and bodyFile. Use exactly one of them."
+                "RespondWith declares both bodyText and bodyFile. Use exactly one of them.",
             )
         }
         return ResponseSpec(

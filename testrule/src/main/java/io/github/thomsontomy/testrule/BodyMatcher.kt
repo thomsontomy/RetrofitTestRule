@@ -46,7 +46,7 @@ object StructuralBodyMatcher : BodyMatcher {
                         append("Request body did not match (structural JSON comparison).")
                         append("\n\nExpected:\n").append(prettyGson.toJson(expectedJson))
                         append("\n\nActual:\n").append(prettyGson.toJson(actualJson))
-                    }
+                    },
                 )
             }
             return
@@ -58,7 +58,7 @@ object StructuralBodyMatcher : BodyMatcher {
                     append("Request body did not match (text comparison, at least one body is not JSON).")
                     append("\n\nExpected:\n").append(expected)
                     append("\n\nActual:\n").append(actual)
-                }
+                },
             )
         }
     }
@@ -87,7 +87,7 @@ object ExactBodyMatcher : BodyMatcher {
                     append("Request body did not match (exact comparison).")
                     append("\n\nExpected:\n").append(expected)
                     append("\n\nActual:\n").append(actual)
-                }
+                },
             )
         }
     }

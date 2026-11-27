@@ -130,14 +130,12 @@ class RequestAssertions internal constructor(
         }
     }
 
-    private fun fail(message: String): Nothing =
-        throw AssertionError("$message\n\n${request.format()}")
+    private fun fail(message: String): Nothing = throw AssertionError("$message\n\n${request.format()}")
 
     private fun String.matchesHeaderValue(expected: String): Boolean {
         if (this == expected) return true
         return expected.indexOf(';') < 0 && substringBefore(';').trim() == expected.trim()
     }
 
-    private fun String.decodeUrlComponent(): String =
-        java.net.URLDecoder.decode(this, Charsets.UTF_8.name())
+    private fun String.decodeUrlComponent(): String = java.net.URLDecoder.decode(this, Charsets.UTF_8.name())
 }

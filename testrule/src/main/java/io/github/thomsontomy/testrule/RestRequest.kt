@@ -40,10 +40,7 @@ import kotlin.jvm.JvmRepeatable
 @JvmRepeatable(RestRequests::class)
 @Retention(RUNTIME)
 @Target(FUNCTION)
-annotation class RestRequest(
-    val expect: ExpectRequest = ExpectRequest(),
-    val respond: RespondWith = RespondWith(),
-)
+annotation class RestRequest(val expect: ExpectRequest = ExpectRequest(), val respond: RespondWith = RespondWith())
 
 /**
  * Container for repeated [RestRequest] annotations.
@@ -112,10 +109,7 @@ annotation class RespondWith(
  * @property value expected (decoded) parameter value
  */
 @Retention(RUNTIME)
-annotation class QueryParam(
-    val name: String,
-    val value: String,
-)
+annotation class QueryParam(val name: String, val value: String)
 
 /**
  * A header name/value pair used for request expectations and response definitions.
@@ -124,10 +118,7 @@ annotation class QueryParam(
  * @property value header value
  */
 @Retention(RUNTIME)
-annotation class HeaderValue(
-    val name: String,
-    val value: String,
-)
+annotation class HeaderValue(val name: String, val value: String)
 
 /**
  * Supported HTTP methods for [ExpectRequest.method].

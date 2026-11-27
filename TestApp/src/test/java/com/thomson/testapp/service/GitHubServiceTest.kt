@@ -109,7 +109,7 @@ class GitHubServiceTest {
                     chain.request()
                         .newBuilder()
                         .header("Authorization", "Bearer token")
-                        .build()
+                        .build(),
                 )
             }
             .build()
