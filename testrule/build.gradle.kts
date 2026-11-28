@@ -30,7 +30,7 @@ dependencies {
     compileOnly("org.junit.jupiter:junit-jupiter-api:5.10.2")
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
-    testRuntimeOnly("org.junit.vintage:junit-vintage-engine:5.10.2")
+    testRuntimeOnly("org.junit.vintage:junit-vintage-engine:6.1.3")
 }
 
 tasks.test {
