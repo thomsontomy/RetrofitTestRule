@@ -1,0 +1,11 @@
+# yamllint configuration for Trunk.
+extends: default
+
+rules:
+  # GitHub Actions workflows do not use a document start marker.
+  document-start: disable
+  line-length:
+    max: 120
+  # `on:` is a GitHub Actions key, not a boolean.
+  truthy:
+    check-keys: false

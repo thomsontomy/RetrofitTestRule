@@ -2,7 +2,6 @@ package com.thomson.testapp.service
 
 import com.google.gson.annotations.SerializedName
 
-
 data class GithubRepo(
     @SerializedName("id") var id: Int? = null,
     @SerializedName("node_id") var nodeId: String? = null,
@@ -80,5 +79,5 @@ data class GithubRepo(
     @SerializedName("forks") var forks: Int? = null,
     @SerializedName("open_issues") var openIssues: Int? = null,
     @SerializedName("watchers") var watchers: Int? = null,
-    @SerializedName("default_branch") var defaultBranch: String? = null
+    @SerializedName("default_branch") var defaultBranch: String? = null,
 )

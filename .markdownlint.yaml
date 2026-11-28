@@ -1,0 +1,10 @@
+# markdownlint configuration for Trunk.
+#
+# Defaults are enabled; only rules that fight the README's tables and badges are turned off.
+default: true
+
+# Long prose lines and table rows are easier to review without artificial wrapping.
+MD013: false
+
+# Inline HTML is used for badges and for line breaks inside tables.
+MD033: false

@@ -2,25 +2,68 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
+
+permissions:
+  contents: read
 
 jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    permissions:
+      # Trunk posts inline annotations for the issues it finds.
+      checks: write
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Trunk compares against the base branch when annotating pull requests.
+          fetch-depth: 0
+
+      - name: Setup Java JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          # ktlint runs on the JVM.
+          java-version: 17
+
+      # Trunk aggregates ktlint, actionlint, markdownlint, yamllint and gitleaks. The versions are
+      # pinned in .trunk/trunk.yaml. There is no floating `v2` tag, so the release tag is used.
+      - name: Trunk Code Quality
+        uses: trunk-io/trunk-action@v2.0.0
+        with:
+          check-mode: all
+
   build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-        
+        uses: actions/checkout@v4
+
       - name: Setup Java JDK
-        uses: actions/setup-java@v3.0.0
+        uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
-          java-version: 11
+          # The library targets JVM 17 through a Gradle toolchain.
+          java-version: 17
 
-      - name: Assemble Gradle
-        uses: gradle/gradle-build-action@v2.1.4
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Check
+        run: ./gradlew check --stacktrace
+
+      - name: Upload test reports
+        if: failure()
+        uses: actions/upload-artifact@v4
         with:
-          arguments: build
+          name: test-reports
+          path: |
+            testrule/build/reports/tests
+            TestApp/build/reports/tests

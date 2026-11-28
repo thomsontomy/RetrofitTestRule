@@ -1,0 +1,29 @@
+version: 0.1
+
+cli:
+  version: 1.25.0
+
+plugins:
+  sources:
+    - id: trunk
+      ref: v1.11.0
+      uri: https://github.com/trunk-io/plugins
+
+lint:
+  enabled:
+    # Kotlin, including Gradle Kotlin DSL (*.kts). Style is configured in .editorconfig.
+    - ktlint@1.7.1
+    # GitHub Actions workflow validation.
+    - actionlint@1.7.8
+    - markdownlint@0.45.0
+    - yamllint@1.37.1
+    - gitleaks@8.29.0
+  ignore:
+    # Generated Dokka output.
+    - linters: [ALL]
+      paths:
+        - docs/**
+    # Build output is gitignored, but ignore it explicitly when trunk runs on an unclean tree.
+    - linters: [ALL]
+      paths:
+        - "**/build/**"

@@ -1,10 +1,10 @@
 package io.github.thomsontomy.testrule
 
 import com.google.gson.Gson
-import okhttp3.mockwebserver.MockResponse
+import java.time.Duration
+import okhttp3.HttpUrl
+import okhttp3.OkHttpClient
 import okhttp3.mockwebserver.MockWebServer
-import okhttp3.mockwebserver.RecordedRequest
-import org.junit.Assert.fail
 import org.junit.rules.TestRule
 import org.junit.runner.Description
 import org.junit.runners.model.Statement
@@ -14,174 +14,159 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 /**
- * JUnit test rule for testing Retrofit services
+ * The default converter factories: Gson, so that JSON service interfaces work out of the box.
  *
- * @author Thomson Thomas
+ * Pass a different list to the constructor when production uses Moshi, kotlinx.serialization or a
+ * custom converter.
+ */
+fun defaultConverterFactories(): List<Converter.Factory> = listOf(GsonConverterFactory.create(Gson()))
+
+/**
+ * Kotlin friendly factory that avoids passing the service class explicitly.
  *
- * @constructor Creates an instance of [RetrofitTestRule]
+ * ```kotlin
+ * @get:Rule
+ * val rule = retrofitTestRule<GitHubService>(logLevel = LogLevel.BODY)
+ * ```
+ */
+inline fun <reified T : Any> retrofitTestRule(
+    logLevel: LogLevel = LogLevel.NONE,
+    converterFactories: List<Converter.Factory> = defaultConverterFactories(),
+    callAdapterFactories: List<CallAdapter.Factory> = emptyList(),
+    logger: TestLogger = TestLogger.STDOUT,
+): RetrofitTestRule<T> = RetrofitTestRule(T::class.java, logLevel, converterFactories, callAdapterFactories, logger)
+
+/**
+ * JUnit 4 [TestRule] that runs a Retrofit service against an OkHttp [MockWebServer].
+ *
+ * The rule starts the server before the test body, enqueues the responses declared with
+ * [RestRequest] (or programmatically through the [RetrofitTestDsl] methods), and validates every
+ * captured request after the body completes.
+ *
+ * ```kotlin
+ * class GitHubServiceTest {
+ *     @get:Rule
+ *     val rule = RetrofitTestRule(GitHubService::class.java)
+ *
+ *     @Test
+ *     @RestRequest(
+ *         expect = ExpectRequest(path = "/users/me", method = HttpMethod.GET),
+ *         respond = RespondWith(bodyText = """{"login":"octocat"}"""),
+ *     )
+ *     fun `loads the profile`() = runTest {
+ *         val service = rule.getService()
+ *         assertEquals("octocat", service.profile().login)
+ *     }
+ * }
+ * ```
+ *
+ * The rule is also a full programmatic API; see [RetrofitTestDsl] for enqueuing responses and
+ * asserting on requests without annotations.
  *
  * @param T Retrofit service interface
- * @property clazz Class instance of the retrofit service interface
- * @property logLevel [LogLevel] from the rule
- * @property converterFactories List of retrofit converter factories. Default value is [GsonConverterFactory]
- * @property callAdapterFactories List of retrofit call adapter factories
+ * @param serviceClass Retrofit service interface to instantiate
+ * @param logLevel amount of request logging, [LogLevel.NONE] by default
+ * @param converterFactories converter factories applied to the generated Retrofit instance
+ * @param callAdapterFactories call adapter factories applied to the generated Retrofit instance
+ * @param logger sink used for request logging
  */
-class RetrofitTestRule<T>(
-    private val clazz: Class<T>,
-    private val logLevel: LogLevel = LogLevel.NONE,
-    private val converterFactories: List<Converter.Factory> = listOf(
-        GsonConverterFactory.create(
-            Gson()
-        )
-    ),
-    private val callAdapterFactories: List<CallAdapter.Factory> = emptyList()
-) : TestRule {
+class RetrofitTestRule<T : Any> @JvmOverloads constructor(
+    serviceClass: Class<T>,
+    logLevel: LogLevel = LogLevel.NONE,
+    converterFactories: List<Converter.Factory> = defaultConverterFactories(),
+    callAdapterFactories: List<CallAdapter.Factory> = emptyList(),
+    logger: TestLogger = TestLogger.STDOUT,
+) : TestRule,
+    RetrofitTestDsl<T> {
 
-    private val mockWebServer = MockWebServer()
+    private val support = RetrofitTestSupport(
+        serviceClass = serviceClass,
+        converterFactories = converterFactories,
+        callAdapterFactories = callAdapterFactories,
+        logLevel = logLevel,
+        logger = logger,
+    )
+
+    override val server: MockWebServer get() = support.server
+
+    override val baseUrl: HttpUrl get() = support.baseUrl
+
+    override val recordedRequests: List<RequestSnapshot> get() = support.recordedRequests
+
+    override val pendingResponses: Int get() = support.pendingResponses
+
+    override var bodyMatcher: BodyMatcher
+        get() = support.bodyMatcher
+        set(value) {
+            support.bodyMatcher = value
+        }
+
+    override fun getService(): T = support.getService()
+
+    override fun getService(client: OkHttpClient): T = support.getService(client)
+
+    override fun getService(configure: Retrofit.Builder.() -> Unit): T = support.getService(configure)
+
+    override fun service(factory: (HttpUrl) -> T): T = support.service(factory)
+
+    override fun enqueue(response: ResponseSpec) = support.enqueue(response)
+
+    override fun enqueueResponse(code: Int, body: String, headers: Map<String, String>, delayMs: Long) =
+        support.enqueueResponse(code, body, headers, delayMs)
+
+    override fun enqueueResponseFromFile(file: String, code: Int, headers: Map<String, String>) =
+        support.enqueueResponseFromFile(file, code, headers)
+
+    override fun enqueueNetworkError(behavior: SocketBehavior) = support.enqueueNetworkError(behavior)
+
+    override fun takeRequest(timeout: Duration): RequestSnapshot = support.takeRequest(timeout)
+
+    override fun verifyRequest(timeout: Duration, block: RequestAssertions.() -> Unit): RequestSnapshot =
+        support.verifyRequest(timeout, block)
+
+    override fun assertAllRequestsConsumed() = support.assertAllRequestsConsumed()
+
+    override fun assertNoPendingResponses() = support.assertNoPendingResponses()
 
     /**
-     * Returns the service instance which was passed in while creating [RetrofitTestRule].
-     * To be used inside the unit test to test the service.
-     * @return T instance of the retrofit service
+     * Starts the mock server eagerly.
+     *
+     * Only needed when the rule is used outside of JUnit's rule lifecycle, for example as a
+     * `@ClassRule` or from a custom harness. The server is started automatically otherwise.
+     *
+     * @param testClass test class used to resolve resource files
      */
-    fun getService(): T {
-        val url = mockWebServer.url("")
-        val retrofitBuilder = Retrofit.Builder()
-            .baseUrl(url)
-        converterFactories.forEach { retrofitBuilder.addConverterFactory(it) }
-        callAdapterFactories.forEach { retrofitBuilder.addCallAdapterFactory(it) }
-        return retrofitBuilder
-            .build()
-            .create(clazz)
-    }
+    fun start(testClass: Class<*>? = null) = support.start(testClass)
 
-    override fun apply(base: Statement, description: Description): Statement {
-        return object : Statement() {
-            override fun evaluate() {
-                val restRequest = description.getAnnotation(RestRequest::class.java)
-                try {
-                    restRequest?.prepareMockServer()
-                    base.evaluate()
-                    restRequest?.validateRequest()
-                } finally {
-                    cleanupMockServer()
+    /** Stops the mock server eagerly. Idempotent. */
+    fun stop() = support.stop()
+
+    override fun apply(base: Statement, description: Description): Statement = object : Statement() {
+        override fun evaluate() {
+            support.start(description.testClass)
+            try {
+                val requests = description.restRequests()
+                requests.forEach { support.enqueue(it) }
+                base.evaluate()
+                requests.forEachIndexed { index, request ->
+                    support.verify(request, index, requests.size)
                 }
+                support.assertAllRequestsConsumed()
+            } finally {
+                support.stop()
             }
         }
-    }
-
-    private fun RestRequest.prepareMockServer() {
-        mockWebServer.start()
-        val responseBody = if (responseOptions.bodyFile.isBlank()) {
-            responseOptions.bodyText
-        } else {
-            getResourceContents(responseOptions.bodyFile)
-        }
-        mockWebServer.enqueue(
-            MockResponse()
-                .setResponseCode(responseOptions.code)
-                .setBody(responseBody)
-        )
-    }
-
-    private fun getResourceContents(file: String): String {
-        return try {
-            clazz.getResourceAsStream(file).use { it?.bufferedReader()?.readText() }!!
-        } catch (exception: Exception) {
-            fail("Could not access resource file from $file. Make sure the file is at the class path")
-            throw Exception("Could not access resource file from $file. Make sure the file is at the class path")
-        }
-    }
-
-    private fun RestRequest.validateRequest() {
-        val request = mockWebServer.takeRequest()
-        request.logRequest()
-        if (validations.path.isNotMagicNull() && request.path != validations.path) {
-            fail("Expected request route <${validations.path}> but was <${request.path}>")
-        }
-        if (validations.method.isNotMagicNull() && request.method != validations.method) {
-            fail("Expected request method <${validations.method}> but was <${request.method}>")
-        }
-        if (validations.headers.isNotEmpty()) {
-            validations.headers.forEach { header ->
-                val (key, value) = header.value.split(":").map { it.trim() }
-                if (!request.headers.names().contains(key)) {
-                    fail("Expected request header <$key> but not found")
-                }
-                if (request.headers[key] != value) {
-                    fail("Expected request header value <$key : $value> but was <${request.headers[key]}>")
-                }
-            }
-        }
-        val validationBodyText = when {
-            validations.bodyText.isNotMagicNull() -> validations.bodyText
-            validations.bodyFile.isNotMagicNull() -> getResourceContents(validations.bodyFile)
-            else -> ""
-        }
-        if (validationBodyText.isNotBlank() && request.body.copy()
-                .readUtf8() != validationBodyText
-        ) {
-            fail("Expected request body \n<$validationBodyText>\n but was \n<${request.body.readUtf8()}>\n")
-        }
-    }
-
-    private fun RecordedRequest.logRequest() {
-        if (logLevel in arrayOf(LogLevel.BODY, LogLevel.HEADERS, LogLevel.BASIC)) {
-            println("--> $requestLine")
-        }
-        if (logLevel in arrayOf(LogLevel.BODY, LogLevel.HEADERS)) {
-            println("$headers")
-        }
-        if (logLevel == LogLevel.BODY) {
-            println(body.copy().readUtf8())
-        }
-        if (logLevel in arrayOf(LogLevel.BODY, LogLevel.HEADERS, LogLevel.BASIC)) {
-            println("<-- END HTTP")
-        }
-    }
-
-    private fun String.isNotMagicNull(): Boolean = this != MAGIC_NULL
-
-    private fun cleanupMockServer() {
-        mockWebServer.shutdown()
     }
 }
 
 /**
- * Level of log output from the rule
+ * Reads the [RestRequest] declarations of a test method.
+ *
+ * JUnit 4's [Description] does not implement [java.lang.reflect.AnnotatedElement], so repeatable
+ * annotations are unwrapped manually from the [RestRequests] container.
  */
-enum class LogLevel {
-    /**
-     * No logs
-     */
-    NONE,
-
-    /**
-     * Basic logs. Logs request line
-     * Eg:
-     * ```
-     * --> GET /users/my_user/repos HTTP/1.1
-     * <-- END HTTP
-     * ```
-     */
-    BASIC,
-
-    /**
-     * Logs including headers
-     * Eg:
-     * ```
-     * --> GET /users/my_user/repos HTTP/1.1
-     * Host: localhost:52428
-     * Connection: Keep-Alive
-     * Accept-Encoding: gzip
-     * User-Agent: okhttp/4.9.3
-     * <-- END HTTP
-     * ```
-     */
-    HEADERS,
-
-    /**
-     * Logs including body
-     */
-    BODY
+internal fun Description.restRequests(): List<RestRequest> {
+    getAnnotation(RestRequests::class.java)?.let { return it.value.toList() }
+    getAnnotation(RestRequest::class.java)?.let { return listOf(it) }
+    return emptyList()
 }
