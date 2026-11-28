@@ -23,7 +23,7 @@ dependencies {
 
     // Implementation detail: exposed only through the default converter factories and the
     // built-in structural JSON body matcher.
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:3.0.0")
     implementation("com.google.code.gson:gson:2.10.1")
 
     // Optional: the JUnit 5 extension is only loaded when a consumer already has JUnit 5.
