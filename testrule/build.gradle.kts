@@ -18,7 +18,7 @@ dependencies {
     // on their compile classpath as well as at runtime.
     api("junit:junit:4.13.2")
     api("com.squareup.okhttp3:okhttp:4.11.0")
-    api("com.squareup.okhttp3:mockwebserver:4.11.0")
+    api("com.squareup.okhttp3:mockwebserver:5.5.1")
     api("com.squareup.retrofit2:retrofit:2.9.0")
 
     // Implementation detail: exposed only through the default converter factories and the
