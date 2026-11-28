@@ -9,7 +9,7 @@ plugins {
     id("com.android.library") version "8.2.0" apply false
     id("org.jetbrains.kotlin.android") version "1.8.21" apply false
     id("org.jetbrains.kotlin.jvm") version "1.8.21" apply false
-    id("org.jetbrains.dokka") version "1.8.10" apply false
+    id("org.jetbrains.dokka") version "2.3.0" apply false
 }
 
 tasks.register("clean", Delete::class) {
